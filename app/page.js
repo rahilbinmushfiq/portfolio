@@ -1,3 +1,4 @@
+import Skills from "./components/home/skills";
 import hero from "../public/hero.svg";
 import Image from "next/image";
 import { BsArrowUp, BsArrowDown } from "react-icons/bs";
@@ -37,6 +38,7 @@ export default function Home() {
           <BsArrowDown size={20} />
         </div>
       </section>
+      <Skills />
     </main>
   );
 }
