@@ -10,4 +10,12 @@
   .indicator-wrapper {
     @apply justify-center items-center gap-x-1 text-gray-400 [&>p]:font-medium;
   }
+
+  .about-subsection {
+    @apply space-y-2 text-gray-600;
+  }
+
+  .about-subsection h4 {
+    @apply text-lg/none font-semibold text-black sm:text-xl/none 2xl:text-2xl/none;
+  }
 }
