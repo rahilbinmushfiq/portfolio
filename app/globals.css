@@ -18,4 +18,21 @@
   .about-subsection h4 {
     @apply text-lg/none font-semibold text-black sm:text-xl/none 2xl:text-2xl/none;
   }
+
+  .form-field-wrapper {
+    @apply flex flex-col gap-y-2;
+  }
+
+  .form-field-wrapper label {
+    @apply font-semibold text-neutral-500;
+  }
+
+  .form-field-wrapper input,
+  .form-field-wrapper textarea {
+    @apply w-full p-3 rounded-sm bg-neutral-200 caret-[#7342D5] focus:outline-none focus:bg-white focus:ring-2 focus:ring-[#7342D5];
+  }
+
+  .alt-contact-option {
+    @apply flex items-center gap-x-4 font-semibold [&>svg]:text-xl [&>svg]:text-white [&>a]:text-gray-300 lg:[&>svg]:text-2xl xl:gap-x-6;
+  }
 }
