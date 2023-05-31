@@ -19,6 +19,26 @@
     @apply text-lg/none font-semibold text-black sm:text-xl/none 2xl:text-2xl/none;
   }
 
+  .portfolio-chevron-wrapper {
+    @apply absolute flex justify-center items-center h-full z-[1] px-2 text-lg sm:px-12 sm:text-2xl md:px-16 lg:px-20 xl:px-16 2xl:px-24 2xl:text-3xl;
+  }
+
+  .portfolio-chevron-wrapper svg {
+    @apply cursor-pointer transition-all duration-300 xl:hover:text-3xl 2xl:text-4xl;
+  }
+
+  .project-btn {
+    @apply grid grid-cols-2 gap-3 [&>button]:h-12 sm:[&>button]:h-14 sm:gap-4 lg:grid-cols-3;
+  }
+
+  .project-btn button {
+    @apply text-center rounded-sm border-2 border-[#7342D5] transition-all duration-300;
+  }
+
+  .project-btn button > a {
+    @apply flex justify-center items-center gap-x-2 font-semibold [&>svg]:text-xl/none;
+  }
+
   .form-field-wrapper {
     @apply flex flex-col gap-y-2;
   }
