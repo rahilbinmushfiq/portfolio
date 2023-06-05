@@ -72,9 +72,9 @@ export default function Contact() {
 
   return (
     <>
-      <section className="[&>div]:h-[calc(100vh_-_(26px_+_24px_+_24px))] sm:flex sm:h-[calc(100vh_-_(36px_+_32px_+_32px))] sm:[&>div]:h-full sm:[&>div]:w-full lg:h-[calc(100vh_-_(40px_+_32px_+_32px))] 2xl:h-[calc(100vh_-_(44px_+_32px_+_32px))]">
+      <section className="sm:flex sm:h-[calc(100vh_-_(36px_+_32px_+_32px_+_60px))] sm:[&>div]:h-full sm:[&>div]:w-full lg:h-[calc(100vh_-_(40px_+_32px_+_32px_+_60px))] 2xl:h-[calc(100vh_-_(44px_+_32px_+_32px_+_60px))]">
         {/* Contact Form Subsection */}
-        <div className="flex items-center p-6 sm:basis-1/2 md:basis-[48%] sm:pl-12 sm:pr-8 md:pl-16 lg:basis-1/2 lg:pl-20 lg:pr-12 xl:pl-36 xl:pr-16 xl:max-2xl:basis-[55%] 2xl:pl-56 2xl:pr-20">
+        <div className="flex items-center h-[calc(100vh_-_(26px_+_24px_+_24px))] p-6 sm:basis-1/2 md:basis-[48%] sm:pl-12 sm:pr-8 md:pl-16 lg:basis-1/2 lg:pl-20 lg:pr-12 xl:pl-36 xl:pr-16 xl:max-2xl:basis-[55%] 2xl:pl-56 2xl:pr-20">
           <div className="space-y-14 sm:space-y-20 xl:space-y-14 2xl:space-y-16">
             {/* Section Header */}
             <div className="space-y-3">
@@ -93,7 +93,7 @@ export default function Contact() {
               </div>
               <div className="xl:col-span-2">
                 <label htmlFor="message">Message</label>
-                <textarea ref={messageRef} id="message" rows="8" />
+                <textarea className="resize-none xl:max-2xl:max-h-[8rem]" ref={messageRef} id="message" rows="8" />
               </div>
               <button
                 className={`flex items-center justify-center gap-x-2 w-full py-4 rounded-sm font-medium ${isProcessing ? "cursor-not-allowed bg-[#e2d2ff] hover:bg-[#e9deff]" : "text-white bg-[#864DF8] hover:bg-[#9664F9]"} xl:gap-x-3 xl:w-fit xl:px-8 xl:col-span-2`}
@@ -115,7 +115,7 @@ export default function Contact() {
           </div>
         </div>
         {/* Alternative Contact Subsection */}
-        <div className="flex items-center p-6 bg-[#7342D5] sm:basis-1/2 md:basis-[52%] sm:pl-8 sm:pr-12 md:pr-16 lg:basis-1/2 lg:pl-12 lg:pr-20 xl:pl-16 xl:pr-36 xl:max-2xl:basis-[45%] 2xl:pl-20 2xl:pr-56">
+        <div className="flex items-center h-[calc(100vh_-_(26px_+_24px_+_24px_+_56px))] p-6 bg-[#7342D5] sm:basis-1/2 md:basis-[52%] sm:pl-8 sm:pr-12 md:pr-16 lg:basis-1/2 lg:pl-12 lg:pr-20 xl:pl-16 xl:pr-36 xl:max-2xl:basis-[45%] 2xl:pl-20 2xl:pr-56">
           <div className="space-y-20 sm:space-y-24">
             {/* Subsection Header */}
             <div className="space-y-2">
