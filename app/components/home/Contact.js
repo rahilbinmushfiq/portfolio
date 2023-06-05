@@ -145,7 +145,7 @@ export default function Contact() {
         </div>
       </section>
       <ToastContainer
-        className="text-sm mt-[calc(44px_+_32px_+_32px)]"
+        className="text-sm mt-[calc(26px_+_24px_+_24px)] sm:mt-[calc(36px_+_32px_+_32px)] lg:mt-[calc(40px_+_32px_+_32px)] 2xl:mt-[calc(44px_+_32px_+_32px)]"
         position="top-center"
         autoClose={4000}
         hideProgressBar={false}
