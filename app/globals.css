@@ -55,4 +55,16 @@
   .alt-contact-option {
     @apply flex items-center gap-x-4 font-semibold [&>svg]:text-xl [&>svg]:text-white [&>a]:text-gray-300 lg:[&>svg]:text-2xl xl:gap-x-6;
   }
+
+  .project-page-btn {
+    @apply px-4 py-3 rounded-sm border-2 border-[#7342D5] text-white bg-[#7342D5] transition-all duration-300 hover:text-[#7342D5] hover:bg-transparent;
+  }
+
+  .project-page-btn a {
+    @apply flex justify-center items-center gap-x-2 font-medium [&>svg]:text-xl/none;
+  }
+
+  .bullet-point {
+    @apply flex gap-x-2 xl:gap-x-3 2xl:gap-x-4 [&>span]:font-semibold [&>span]:text-neutral-500;
+  }
 }
