@@ -14,7 +14,7 @@ export default function Header() {
   const [isMobileNavMenuOpen, setIsMobileNavMenuOpen] = useState(false); // State hook for keeping track whether to show or hide the navbar menu on smaller devices
 
   return (
-    <header className={`${isMobileNavMenuOpen ? "min-h-screen bg-[#7342D5] text-white" : "bg-white bg-opacity-75 backdrop-blur-sm"} sticky top-0 flex flex-col z-[2] p-6 shadow-lg sm:px-12 md:px-16 lg:px-20 lg:bg-white lg:bg-opacity-75 lg:backdrop-blur-sm xl:px-36 2xl:px-56`}>
+    <header className={`${isMobileNavMenuOpen ? "max-lg:min-h-screen max-lg:bg-[#7342D5] max-lg:text-white" : "max-lg:bg-white max-lg:bg-opacity-75 max-lg:backdrop-blur-sm"} sticky top-0 flex flex-col z-[2] p-6 shadow-lg sm:px-12 md:px-16 lg:px-20 lg:bg-white lg:bg-opacity-75 lg:backdrop-blur-sm xl:px-36 2xl:px-56`}>
       <div className="flex justify-between lg:items-center lg:font-medium">
         {/* Website Logo */}
         <div>
@@ -66,7 +66,7 @@ export default function Header() {
       </div>
       {/* Mobile Navigation Menu */}
       {isMobileNavMenuOpen && (
-        <div className="grow flex flex-col justify-center gap-y-12 text-lg text-center font-medium sm:gap-y-16 sm:text-2xl">
+        <div className="grow flex flex-col justify-center gap-y-12 text-lg text-center font-medium sm:gap-y-16 sm:text-2xl lg:hidden">
           <nav>
             {/* Navigation Links */}
             <ul className="w-fit flex flex-col gap-y-10 mx-auto sm:gap-y-14">
