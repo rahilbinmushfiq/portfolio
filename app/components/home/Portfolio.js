@@ -33,7 +33,7 @@ export default function Portfolio() {
   };
 
   return (
-    <section className="flex flex-col h-[calc(100vh_-_(26px_+_24px_+_24px))] sm:h-[calc(100vh_-_(36px_+_32px_+_32px))] lg:h-[calc(100vh_-_(40px_+_32px_+_32px))] 2xl:h-[calc(100vh_-_(44px_+_32px_+_32px))]">
+    <section id="portfolio" className="home-section flex flex-col h-[calc(100vh_-_80px)] lg:h-[calc(100vh_-_86px)]">
       {/* Section Header */}
       <div className="space-y-2 py-8 px-6 sm:px-12 md:px-16 lg:py-14 lg:px-20 xl:px-36 2xl:px-56">
         <h3 className="text-3xl font-semibold xl:text-4xl">Portfolio</h3>

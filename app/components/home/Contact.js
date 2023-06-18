@@ -72,9 +72,9 @@ export default function Contact() {
 
   return (
     <>
-      <section className="sm:flex sm:h-[calc(100vh_-_(36px_+_32px_+_32px_+_60px))] sm:[&>div]:h-full sm:[&>div]:w-full lg:h-[calc(100vh_-_(40px_+_32px_+_32px_+_60px))] 2xl:h-[calc(100vh_-_(44px_+_32px_+_32px_+_60px))]">
+      <section id="contact" className="sm:flex sm:[&>div]:h-full sm:[&>div]:w-full lg:h-[calc(100vh_-_(86px_+_60px))]">
         {/* Contact Form Subsection */}
-        <div className="flex items-center h-[calc(100vh_-_(26px_+_24px_+_24px))] p-6 sm:basis-1/2 md:basis-[48%] sm:pl-12 sm:pr-8 md:pl-16 lg:basis-1/2 lg:pl-20 lg:pr-12 xl:pl-36 xl:pr-16 xl:max-2xl:basis-[55%] 2xl:pl-56 2xl:pr-20">
+        <div className="home-section flex items-center h-[calc(100vh_-_80px)] p-6 sm:basis-1/2 md:basis-[48%] sm:pl-12 sm:pr-8 md:pl-16 lg:basis-1/2 lg:pl-20 lg:pr-12 xl:pl-36 xl:pr-16 xl:max-2xl:basis-[55%] 2xl:pl-56 2xl:pr-20">
           <div className="space-y-14 sm:space-y-20 xl:space-y-14 2xl:space-y-16">
             {/* Section Header */}
             <div className="space-y-3">
@@ -115,7 +115,7 @@ export default function Contact() {
           </div>
         </div>
         {/* Alternative Contact Subsection */}
-        <div className="flex items-center h-[calc(100vh_-_(26px_+_24px_+_24px_+_56px))] p-6 bg-[#7342D5] sm:basis-1/2 md:basis-[52%] sm:pl-8 sm:pr-12 md:pr-16 lg:basis-1/2 lg:pl-12 lg:pr-20 xl:pl-16 xl:pr-36 xl:max-2xl:basis-[45%] 2xl:pl-20 2xl:pr-56">
+        <div className="home-section flex items-center h-[calc(100vh_-_(80px_+_56px))] p-6 bg-[#7342D5] sm:basis-1/2 md:basis-[52%] sm:pl-8 sm:pr-12 md:pr-16 lg:basis-1/2 lg:pl-12 lg:pr-20 xl:pl-16 xl:pr-36 xl:max-2xl:basis-[45%] 2xl:pl-20 2xl:pr-56">
           <div className="space-y-20 sm:space-y-24">
             {/* Subsection Header */}
             <div className="space-y-2">
@@ -145,7 +145,7 @@ export default function Contact() {
         </div>
       </section>
       <ToastContainer
-        className="text-sm mt-[calc(26px_+_24px_+_24px)] sm:mt-[calc(36px_+_32px_+_32px)] lg:mt-[calc(40px_+_32px_+_32px)] 2xl:mt-[calc(44px_+_32px_+_32px)]"
+        className="text-sm mt-[80px] lg:mt-[86px]"
         position="top-center"
         autoClose={4000}
         hideProgressBar={false}

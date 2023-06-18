@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Skills() {
   return (
-    <section className="h-[calc(100vh_-_(26px_+_24px_+_24px))] bg-neutral-50 sm:h-[calc(100vh_-_(36px_+_32px_+_32px))] lg:h-[calc(100vh_-_(40px_+_32px_+_32px))] 2xl:h-[calc(100vh_-_(44px_+_32px_+_32px))]">
+    <section id="skills" className="home-section h-[calc(100vh_-_80px)] bg-neutral-50 lg:h-[calc(100vh_-_86px)]">
       <div className="w-full h-full p-6 sm:px-12 md:px-16 lg:px-20 xl:flex xl:pl-6 xl:pr-36 2xl:pr-56">
         {/* Section Image */}
         <div className="hidden xl:flex xl:justify-center xl:items-center xl:pr-14 2xl:pr-24">

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section className="flex flex-col justify-center items-center gap-y-4 2xl:gap-y-12 px-6 h-[calc(100vh_-_(26px_+_24px_+_24px))] sm:gap-y-16 sm:h-[calc(100vh_-_(36px_+_32px_+_32px))] sm:px-12 md:gap-y-20 lg:gap-y-24 lg:h-[calc(100vh_-_(40px_+_32px_+_32px))] lg:px-16 xl:flex-row xl:gap-y-0 xl:pr-0 xl:pl-36 2xl:h-[calc(100vh_-_(44px_+_32px_+_32px))] 2xl:pl-56">
+    <section id="about" className="home-section flex flex-col justify-center items-center gap-y-4 2xl:gap-y-12 px-6 h-[calc(100vh_-_80px)] sm:gap-y-16 sm:px-12 md:gap-y-20 lg:gap-y-24 lg:h-[calc(100vh_-_86px)] lg:px-16 xl:flex-row xl:gap-y-0 xl:pr-0 xl:pl-36 2xl:pl-56">
       {/* Section Image */}
       <Image
         className="w-full h-auto xl:order-2 xl:grow xl:w-0 xl:pr-2"

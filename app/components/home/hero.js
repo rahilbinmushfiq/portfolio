@@ -4,7 +4,7 @@ import { BsArrowUp, BsArrowDown } from "react-icons/bs";
 
 export default function Hero() {
   return (
-    <section className="flex flex-col justify-center h-[calc(100vh_-_(26px_+_24px_+_24px))] pb-4 sm:h-[calc(100vh_-_(36px_+_32px_+_32px))] sm:pb-6 md:pb-8 lg:h-[calc(100vh_-_(40px_+_32px_+_32px))] xl:pb-10 2xl:h-[calc(100vh_-_(44px_+_32px_+_32px))]">
+    <section id="hero" className="home-section flex flex-col justify-center h-[calc(100vh_-_80px)] pb-4 sm:pb-6 md:pb-8 lg:h-[calc(100vh_-_86px)] xl:pb-10">
       <div className="grow flex flex-col gap-y-4 xl:flex-row xl:gap-y-0">
         <div className="flex flex-col justify-center gap-y-12 p-6 sm:px-12 md:px-16 lg:px-20 xl:basis-[45%] xl:gap-y-16 xl:pr-0 xl:pl-36 2xl:basis-[38%] 2xl:gap-y-20 2xl:pl-56">
           {/* Hero Section Header */}
