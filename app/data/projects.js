@@ -1,9 +1,9 @@
 // Import project mockup images
-import gameonMockup from "@/public/mockups/gameonMockup.svg";
+import gameonMockup from "@/public/mockups/gameonMockup.png";
 import gameonIPhone12ProMockup from "@/public/mockups/gameonIPhone12ProMockup.png";
 import gameonIPadProMockup from "@/public/mockups/gameonIPadProMockup.png";
 import gameonIMacProMockup from "@/public/mockups/gameonIMacProMockup.png";
-import portfolioMockup from "@/public/mockups/portfolioMockup.svg";
+import portfolioMockup from "@/public/mockups/portfolioMockup.png";
 
 // Import the technology logos used in projects
 import reactLogo from "@/public/tech/react.png";
