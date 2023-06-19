@@ -72,7 +72,7 @@ export default function Contact() {
 
   return (
     <>
-      <section id="contact" className="sm:flex sm:[&>div]:h-full sm:[&>div]:w-full lg:h-[calc(100vh_-_(86px_+_60px))]">
+      <section id="contact" className="sm:flex sm:h-[calc(100vh_-_(80px_+_60px))] sm:[&>div]:h-full sm:[&>div]:w-full lg:h-[calc(100vh_-_(86px_+_60px))]">
         {/* Contact Form Subsection */}
         <div className="home-section flex items-center h-[calc(100vh_-_80px)] p-6 sm:basis-1/2 md:basis-[48%] sm:pl-12 sm:pr-8 md:pl-16 lg:basis-1/2 lg:pl-20 lg:pr-12 xl:pl-36 xl:pr-16 xl:max-2xl:basis-[55%] 2xl:pl-56 2xl:pr-20">
           <div className="space-y-14 sm:space-y-20 xl:space-y-14 2xl:space-y-16">
