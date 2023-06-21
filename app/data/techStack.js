@@ -1,57 +1,52 @@
-import htmlLogo from "@/public/tech/html.png";
-import cssLogo from "@/public/tech/css.png";
-import javascriptLogo from "@/public/tech/javascript.png";
-import reactLogo from "@/public/tech/react.png";
-import nextjsLogo from "@/public/tech/nextjs.png";
-import firebaseLogo from "@/public/tech/firebase.png";
-import tailwindLogo from "@/public/tech/tailwind.png";
-import gitLogo from "@/public/tech/git.png";
-import figmaLogo from "@/public/tech/figma.png";
-
 export const techStack = [
   {
     techName: 'HTML',
-    techLogo: htmlLogo,
-    isImageOrientationPortrait: false,
+    techWebsite: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
+    techLogo: '/tech/html.png',
   },
   {
     techName: 'CSS',
-    techLogo: cssLogo,
-    isImageOrientationPortrait: false,
+    techWebsite: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+    techLogo: '/tech/css.png',
   },
   {
     techName: 'JavaScript',
-    techLogo: javascriptLogo,
-    isImageOrientationPortrait: false,
+    techWebsite: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+    techLogo: '/tech/javascript.png',
   },
   {
     techName: 'React',
-    techLogo: reactLogo,
-    isImageOrientationPortrait: false,
+    techWebsite: 'https://react.dev/',
+    techLogo: '/tech/react.png',
   },
   {
     techName: 'Next.js',
-    techLogo: nextjsLogo,
-    isImageOrientationPortrait: false,
+    techWebsite: 'https://nextjs.org/',
+    techLogo: '/tech/nextjs.png',
   },
   {
     techName: 'Firebase',
-    techLogo: firebaseLogo,
-    isImageOrientationPortrait: true,
+    techWebsite: 'https://firebase.google.com/',
+    techLogo: '/tech/firebase.png',
   },
   {
     techName: 'Tailwind',
-    techLogo: tailwindLogo,
-    isImageOrientationPortrait: false,
+    techWebsite: 'https://tailwindcss.com/',
+    techLogo: '/tech/tailwind.png',
+  },
+  {
+    techName: 'GSAP',
+    techWebsite: 'https://greensock.com/gsap/',
+    techLogo: '/tech/gsap.png',
   },
   {
     techName: 'Git',
-    techLogo: gitLogo,
-    isImageOrientationPortrait: false,
+    techWebsite: 'https://git-scm.com/',
+    techLogo: '/tech/git.png',
   },
   {
     techName: 'Figma',
-    techLogo: figmaLogo,
-    isImageOrientationPortrait: true,
+    techWebsite: 'https://www.figma.com/',
+    techLogo: '/tech/figma.png',
   },
 ];

@@ -25,12 +25,16 @@ export default function Cover({ projectTitle, projectMockups }) {
 
   return (
     <div className="flex justify-center items-center h-[50vh] w-full px-6 py-12 bg-neutral-100 sm:px-12 md:px-16 lg:px-20 xl:px-0">
-      <Image
-        className={`${activeCoverId === 0 ? "w-fit h-auto" : "h-full w-auto"} xl:w-auto xl:h-full`}
-        src={projectMockups[activeCoverId]}
-        alt={`${projectTitle} Cover`}
-        priority
-      />
+      <div className="relative h-full w-full">
+        <Image
+          className="object-contain"
+          src={projectMockups[activeCoverId]}
+          alt={`${projectTitle} Cover`}
+          fill
+          sizes="50vh"
+          priority
+        />
+      </div>
     </div>
   );
 }

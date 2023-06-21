@@ -8,7 +8,7 @@ export default function ProjectDetails({ params: { projectId } }) {
   const [project] = projects.filter(project => project.id === Number(projectId));
 
   return (
-    <section>
+    <section className="mt-20 lg:mt-[86px]">
       {/* Project Cover */}
       <Cover
         projectTitle={project.title}
@@ -19,7 +19,7 @@ export default function ProjectDetails({ params: { projectId } }) {
         <div className="space-y-7">
           {/* Header */}
           <div className="space-y-2">
-            <h1 className="text-2xl font-semibold xl:text-4xl">{project.title}</h1>
+            <h1 className="text-3xl font-semibold 2xl:text-4xl">{project.title}</h1>
             <p className="text-gray-600">{project.summary}</p>
           </div>
           {/* Call-to-Action Buttons */}
@@ -40,18 +40,20 @@ export default function ProjectDetails({ params: { projectId } }) {
         </div>
         {/* Tech Stack */}
         <div className="space-y-7">
-          <h2 className="text-lg/none font-semibold sm:text-xl/none 2xl:text-2xl/none">Technologies Used</h2>
+          <h2 className="sub-heading">Technologies Used</h2>
           <div className="flex gap-x-10 sm:gap-x-12">
             {project.techStack.map(tech => (
-              <div key={tech.name} className="flex flex-col items-center gap-y-4">
-                <div className="flex justify-center items-center w-10 h-10 sm:w-11 sm:h-11 2xl:w-12 2xl:h-12">
+              <div key={tech.name} className="flex flex-col items-center gap-y-2.5">
+                <div className="relative marker:flex justify-center items-center w-11 h-11">
                   <Image
-                    className={`${tech.isImageOrientationPortrait ? 'w-auto h-10 sm:h-11 2xl:h-12' : 'w-10 h-auto sm:w-11 2xl:w-12'}`}
+                    className="object-contain"
                     src={tech.logo}
+                    fill
+                    sizes="300px"
                     alt={tech.name}
                   />
                 </div>
-                <h4 className="text-xs font-medium text-gray-600 sm:text-sm 2xl:text-base">{tech.name}</h4>
+                <p className="text-xs font-medium text-gray-600 2xl:text-sm">{tech.name}</p>
               </div>
             ))}
           </div>
@@ -60,7 +62,7 @@ export default function ProjectDetails({ params: { projectId } }) {
         {project.subsections.map(subsection => (
           <div className="space-y-3">
             {/* Heading */}
-            <h2 className="text-lg/none font-semibold sm:text-xl/none 2xl:text-2xl/none">
+            <h2 className="sub-heading">
               {subsection.heading}
             </h2>
             {/* Brief Description (if available) */}

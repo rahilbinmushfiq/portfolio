@@ -2,7 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  p {
+    @apply leading-relaxed;
+  }
+}
+
 @layer utilities {
+  .section-header h3 {
+    @apply relative w-fit mb-2 font-semibold text-2xl 2xl:text-3xl;
+  }
+
+  .section-header h3::before {
+    @apply content-[''] absolute right-0 -bottom-0.5 left-0 w-6 h-1 bg-[#7342D5];
+  }
+
+  .section-header p {
+    @apply text-gray-600;
+  }
+
+  .sub-heading {
+    @apply font-semibold text-lg 2xl:text-xl;
+  }
+
   .line {
     @apply h-0.5 bg-black;
   }
@@ -12,15 +34,11 @@
   }
 
   .indicator-wrapper {
-    @apply justify-center items-center gap-x-1 text-gray-400 [&>p]:font-medium;
+    @apply justify-center items-center gap-x-2.5 py-6 text-gray-400 [&>p]:font-medium sm:py-10 lg:py-20 xl:pt-0 xl:pb-6 2xl:pb-9;
   }
 
   .about-subsection {
-    @apply space-y-2 text-gray-600;
-  }
-
-  .about-subsection h4 {
-    @apply text-lg/none font-semibold text-black sm:text-xl/none 2xl:text-2xl/none;
+    @apply space-y-1 [&>h4]:sub-heading [&>p]:text-gray-600;
   }
 
   .portfolio-chevron-wrapper {
@@ -32,15 +50,15 @@
   }
 
   .project-btn {
-    @apply grid grid-cols-2 gap-3 [&>button]:h-12 sm:[&>button]:h-14 sm:gap-4 lg:grid-cols-3;
+    @apply grid grid-cols-2 gap-3 [&>button]:h-11 sm:[&>button]:h-14 sm:gap-4 lg:grid-cols-3;
   }
 
   .project-btn button {
-    @apply text-center rounded-sm border-2 border-[#7342D5] transition-all duration-300;
+    @apply text-center rounded-sm border border-[#7342D5] transition-all duration-300;
   }
 
   .project-btn button > a {
-    @apply flex justify-center items-center gap-x-2 w-full h-full font-semibold [&>svg]:text-xl/none;
+    @apply flex justify-center items-center gap-x-2 w-full h-full font-medium [&>p]:text-xs [&>svg]:text-xl sm:[&>p]:text-sm;
   }
 
   .form-field-wrapper {
@@ -57,15 +75,15 @@
   }
 
   .alt-contact-option {
-    @apply flex items-center gap-x-4 font-semibold [&>svg]:text-xl [&>svg]:text-white [&>a]:text-gray-300 lg:[&>svg]:text-2xl xl:gap-x-6;
+    @apply flex items-center gap-x-4 font-semibold [&>svg]:text-xl [&>svg]:text-white [&>a]:underline [&>a]:text-gray-200 hover:[&>a]:no-underline hover:[&>a]:text-white xl:gap-x-6 2xl:[&>svg]:text-2xl;
   }
 
   .project-page-btn {
-    @apply px-4 py-3 rounded-sm border-2 border-[#7342D5] text-white bg-[#7342D5] transition-all duration-300 hover:text-[#7342D5] hover:bg-transparent;
+    @apply px-5 py-3.5 rounded-sm border border-[#7342D5] text-white bg-[#7342D5] transition-all duration-300 hover:text-[#7342D5] hover:bg-transparent;
   }
 
   .project-page-btn a {
-    @apply flex justify-center items-center gap-x-2 font-medium [&>svg]:text-xl/none;
+    @apply flex justify-center items-center gap-x-2 font-medium [&>svg]:text-xl [&>p]:text-xs 2xl:[&>p]:text-sm;
   }
 
   .bullet-point {

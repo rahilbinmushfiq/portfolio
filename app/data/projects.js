@@ -1,22 +1,11 @@
-// Import project mockup images
-import gameonMockup from "@/public/mockups/gameonMockup.png";
-import gameonIPhone12ProMockup from "@/public/mockups/gameonIPhone12ProMockup.png";
-import gameonIPadProMockup from "@/public/mockups/gameonIPadProMockup.png";
-import gameonIMacProMockup from "@/public/mockups/gameonIMacProMockup.png";
-import portfolioMockup from "@/public/mockups/portfolioMockup.png";
-
-// Import the technology logos used in projects
-import reactLogo from "@/public/tech/react.png";
-import nextjsLogo from "@/public/tech/nextjs.png";
-import firebaseLogo from "@/public/tech/firebase.png";
-import tailwindLogo from "@/public/tech/tailwind.png";
-
 export const projects = [
   {
     id: 0,
-    mockup: gameonMockup,
+    mockup: '/mockups/gameonMockup.png',
     mockups: [
-      gameonIPhone12ProMockup, gameonIPadProMockup, gameonIMacProMockup,
+      '/mockups/gameonIPhone12ProMockup.png',
+      '/mockups/gameonIPadProMockup.png',
+      '/mockups/gameonIMacProMockup.png',
     ],
     title: 'Game On',
     summary: 'A responsive and interactive game review web app that allows users to browse, search, and filter video games, as well as to read and submit reviews.',
@@ -62,23 +51,24 @@ export const projects = [
       },
     ],
     techStack: [
-      { name: 'React', logo: reactLogo, isImageOrientationPortrait: false, },
-      { name: 'Next.js', logo: nextjsLogo, isImageOrientationPortrait: false, },
-      { name: 'Firebase', logo: firebaseLogo, isImageOrientationPortrait: true, },
-      { name: 'Tailwind', logo: tailwindLogo, isImageOrientationPortrait: false, },
+      { name: 'React', logo: '/tech/react.png', },
+      { name: 'Next.js', logo: '/tech/nextjs.png', },
+      { name: 'Firebase', logo: '/tech/firebase.png', },
+      { name: 'Tailwind', logo: '/tech/tailwind.png', },
     ],
     demoLink: 'https://gameon-rahilbinmushfiq.vercel.app/',
     codeLink: 'https://github.com/rahilbinmushfiq/gameon',
   },
   {
     id: 1,
-    mockup: portfolioMockup,
+    mockup: '/mockups/portfolioMockup.png',
     title: 'Portfolio',
     summary: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt animi numquam cumque in sed similique eum consequuntur optio.',
     techStack: [
-      { name: 'React', logo: reactLogo, isImageOrientationPortrait: false, },
-      { name: 'Next.js', logo: nextjsLogo, isImageOrientationPortrait: false, },
-      { name: 'Tailwind', logo: tailwindLogo, isImageOrientationPortrait: false, },
+      { name: 'React', logo: '/tech/react.png', },
+      { name: 'Next.js', logo: '/tech/nextjs.png', },
+      { name: 'Tailwind', logo: '/tech/tailwind.png', },
+      { name: 'GSAP', logo: '/tech/gsap.png', },
     ],
     demoLink: 'https://portfolio-rahilbinmushfiq.vercel.app/',
     codeLink: 'https://github.com/rahilbinmushfiq/portfolio',

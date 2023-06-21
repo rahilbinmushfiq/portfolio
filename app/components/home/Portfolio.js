@@ -35,12 +35,12 @@ export default function Portfolio() {
   return (
     <section id="portfolio" className="home-section flex flex-col h-[calc(100vh_-_80px)] lg:h-[calc(100vh_-_86px)]">
       {/* Section Header */}
-      <div className="space-y-2 py-8 px-6 sm:px-12 md:px-16 lg:py-14 lg:px-20 xl:px-36 2xl:px-56">
-        <h3 className="text-3xl font-semibold xl:text-4xl">Portfolio</h3>
-        <p className="text-gray-600">In this section, you can view my featured projects. Swipe left or right to view other projects.</p>
+      <div className="section-header py-8 px-6 sm:px-12 md:px-16 sm:py-14 lg:px-20 lg:max-xl:py-20 xl:px-36 2xl:px-56 2xl:py-20">
+        <h3>Portfolio</h3>
+        <p>In this section, you can view my featured projects. Swipe left or right to view other projects.</p>
       </div>
       {/* Project Carousel */}
-      <div className="relative grow flex flex-col justify-center bg-neutral-100 overflow-hidden">
+      <div className="relative grow flex justify-center bg-neutral-100 overflow-hidden">
         {/* Left Chevron */}
         <div className="portfolio-chevron-wrapper left-0">
           <FaChevronLeft
