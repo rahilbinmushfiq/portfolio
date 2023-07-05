@@ -37,22 +37,24 @@ export default function Main({ children }) {
 
         isScrollInProgress = true;
         gsap.to(window, {
-          duration: 0.4,
-          ease: 'power3.inOut',
+          duration: 0.25,
+          ease: 'sine.inOut',
           scrollTo: { y: sectionToBeScrolled, offsetY: headerOffsetHeight },
           onComplete: () => isScrollInProgress = false,
         });
       };
 
-      sections.forEach((section, index) => {
-        /* Keep track of the current section in view, and
-           style its corresponding navigation link on toggle
+      sections.forEach((section, sectionIndex) => {
+        /* Keep track of the current section in view on larger screens, and
+           style its corresponding navigation link on the navbar on toggle
         */
-        ScrollTrigger.create({
+        isLargerScreen && ScrollTrigger.create({
           trigger: section,
-          start: 'top center',
-          end: 'bottom center',
-          toggleClass: isLargerScreen && { targets: navLinks[index], className: 'text-[#864DF8]' },
+          start: 'top-=86 bottom',
+          end: 'bottom-=86 top',
+          onToggle: (self) => self.isActive && navLinks.forEach((navLink, navIndex) => {
+            navLink.classList.toggle('text-[#864DF8]', sectionIndex === navIndex);
+          }),
         });
 
         /* Observe user movement with wheel, touch, or pointer along the y-axis,
@@ -63,17 +65,20 @@ export default function Main({ children }) {
           type: 'wheel, touch, pointer',
           wheelSpeed: -1,
           scrollSpeed: -1,
-          tolerance: 50,
+          tolerance: 75,
           preventDefault: true,
-          onUp: () => !isScrollInProgress && scrollToSection(sections[index + 1]),
-          onDown: () => !isScrollInProgress && scrollToSection(sections[index - 1]),
+          onUp: () => !isScrollInProgress && scrollToSection(sections[sectionIndex + 1]),
+          onDown: () => !isScrollInProgress && scrollToSection(sections[sectionIndex - 1]),
         });
       });
     });
 
-    // Make the scrollbar visible, and clean up all the GSAP animations when component unmounts
+    // Make the scrollbar visible, remove style for the active nav link, and clean up all the GSAP animations when component unmounts
     return () => {
       document.body.style.overflow = 'visible';
+      navLinks && navLinks.forEach(navLink => {
+        navLink.classList.remove('text-[#864DF8]');
+      });
       mm.kill();
     };
   }, []);
