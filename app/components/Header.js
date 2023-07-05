@@ -206,7 +206,7 @@ export default function Header() {
         {/* Desktop Navigation Bar */}
         <nav id="desktop-nav" className="hidden lg:block">
           {/* Navigation Links */}
-          <ul className="w-fit flex gap-x-6 hover:[&>li]:text-[#864DF8] xl:gap-x-10 2xl:gap-x-14">
+          <ul className="w-fit flex gap-x-6 xl:gap-x-10 2xl:gap-x-14">
             <li>
               <Link href="/#hero">Home</Link>
             </li>
@@ -227,7 +227,7 @@ export default function Header() {
         <div className="hidden lg:block">
           {/* External Link for Resume */}
           <Link
-            className="flex items-center gap-x-1.5 px-5 py-2.5 rounded-sm text-white border border-[#864DF8] bg-[#864DF8] hover:text-[#864DF8] hover:bg-transparent"
+            className="flex items-center gap-x-1.5 px-5 py-2.5 rounded-sm text-white border border-[#864DF8] bg-[#864DF8] transition-colors duration-500 ease-out hover:text-[#864DF8] hover:bg-transparent"
             href="https://www.google.com/"
             target="_blank"
             rel="noopener noreferrer"

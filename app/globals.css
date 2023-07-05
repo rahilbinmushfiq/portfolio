@@ -9,12 +9,16 @@
 }
 
 @layer utilities {
+  #desktop-nav ul li {
+    @apply transition-colors duration-300 ease-in-out hover:text-[#864DF8];
+  }
+
   .section-header h3 {
     @apply relative w-fit mb-2 font-semibold text-2xl 2xl:text-3xl;
   }
 
-  .section-header h3::before {
-    @apply content-[''] absolute right-0 -bottom-0.5 left-0 w-6 h-1 bg-[#7342D5];
+  .section-header h3 span {
+    @apply absolute right-0 -bottom-0.5 left-0 w-6 h-1 bg-[#7342D5];
   }
 
   .section-header p {
@@ -30,11 +34,11 @@
   }
 
   .hero-button {
-    @apply px-7 py-3.5 font-medium rounded-sm border border-[#7342D5] transition-all duration-300 hover:border-[#864DF8] sm:px-10 sm:py-4;
+    @apply px-7 py-3.5 font-medium rounded-sm border border-[#7342D5] transition-colors duration-500 ease-out hover:border-[#864DF8] sm:px-10 sm:py-4;
   }
 
   .indicator-wrapper {
-    @apply justify-center items-center gap-x-2.5 py-6 text-gray-400 [&>p]:font-medium sm:py-10 lg:py-20 xl:pt-0 xl:pb-6 2xl:pb-9;
+    @apply justify-center items-center gap-x-2.5 py-6 text-gray-500 [&>p]:font-medium [&>svg]:text-base sm:py-10 lg:py-20 xl:pt-0 xl:pb-6 2xl:pb-9 2xl:[&>svg]:text-lg;
   }
 
   .about-subsection {
@@ -46,7 +50,7 @@
   }
 
   .portfolio-chevron-wrapper svg {
-    @apply cursor-pointer transition-all duration-300 xl:hover:text-3xl 2xl:text-4xl;
+    @apply cursor-pointer transition-[font-size] duration-300 ease-out xl:hover:text-3xl 2xl:hover:text-4xl;
   }
 
   .project-btn {
@@ -54,7 +58,7 @@
   }
 
   .project-btn button {
-    @apply text-center rounded-sm border border-[#7342D5] transition-all duration-300;
+    @apply text-center rounded-sm border border-[#7342D5] transition-colors duration-500 ease-out hover:border-[#864DF8];
   }
 
   .project-btn button > a {
@@ -71,15 +75,19 @@
 
   .form-field-wrapper input,
   .form-field-wrapper textarea {
-    @apply w-full p-3 rounded-sm bg-neutral-200 caret-[#7342D5] focus:outline-none focus:bg-white focus:ring-2 focus:ring-[#7342D5];
+    @apply w-full p-3 rounded-sm bg-neutral-200 outline-none caret-[#7342D5] ring-2 ring-neutral-200 transition-colors duration-[400ms] ease-out focus:bg-white focus:ring-[#7342D5];
   }
 
   .alt-contact-option {
-    @apply flex items-center gap-x-4 font-semibold [&>svg]:text-xl [&>svg]:text-white [&>a]:underline [&>a]:text-gray-200 hover:[&>a]:no-underline hover:[&>a]:text-white xl:gap-x-6 2xl:[&>svg]:text-2xl;
+    @apply flex items-center gap-x-4 font-semibold [&>svg]:text-xl [&>svg]:text-white xl:gap-x-6 2xl:[&>svg]:text-2xl;
+  }
+
+  .alt-contact-option a {
+    @apply underline decoration-2 underline-offset-2 decoration-transparent text-gray-200 transition-colors duration-500 ease-out hover:text-white hover:decoration-inherit;
   }
 
   .project-page-btn {
-    @apply px-5 py-3.5 rounded-sm border border-[#7342D5] text-white bg-[#7342D5] transition-all duration-300 hover:text-[#7342D5] hover:bg-transparent;
+    @apply px-5 py-3.5 rounded-sm border border-[#7342D5] text-white bg-[#7342D5] transition-colors duration-500 ease-out hover:text-[#7342D5] hover:bg-transparent;
   }
 
   .project-page-btn a {
