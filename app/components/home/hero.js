@@ -72,7 +72,7 @@ export default function Hero() {
           {/* Hero Section Header */}
           <div ref={textRefs} className="space-y-3 lg:space-y-5 xl:space-y-7">
             <h2 className="-mb-2 text-base font-medium sm:max-xl:text-xl xl:-mb-4 xl:font-medium xl:text-lg">
-              Hi, I'm <span className="text-[#7342D5]">Rahil Bin Mushfiq</span>.
+              Hi, I&apos;m <span className="text-[#7342D5]">Rahil Bin Mushfiq</span>.
             </h2>
             <h1 className="text-[3.5rem]/[1.15] font-semibold lg:text-7xl xl:text-6xl 2xl:text-[5.5rem]/[1.15]">
               Frontend Developer.

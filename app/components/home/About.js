@@ -74,7 +74,7 @@ export default function About() {
           {/* Personal Subsection */}
           <div ref={element => { if (subsectionsRef.current) subsectionsRef.current[0] = element }}>
             <h4>Personal</h4>
-            <p>When I'm not coding, you can find me playing video games, watching football, reading about the latest trends in web development, or exploring new technologies.</p>
+            <p>When I&apos;m not coding, you can find me playing video games, watching football, reading about the latest trends in web development, or exploring new technologies.</p>
           </div>
           {/* Technical Subsection */}
           <div ref={element => { if (subsectionsRef.current) subsectionsRef.current[1] = element }}>
@@ -84,7 +84,7 @@ export default function About() {
           {/* Education Subsection */}
           <div ref={element => { if (subsectionsRef.current) subsectionsRef.current[2] = element }}>
             <h4>Education</h4>
-            <p>I earned my Bachelor's degree in Computer Science and Engineering from Brac University, graduating with a CGPA of 3.63 out of 4.00.</p>
+            <p>I earned my Bachelor&apos;s degree in Computer Science and Engineering from Brac University, graduating with a CGPA of 3.63 out of 4.00.</p>
           </div>
         </div>
       </div>
