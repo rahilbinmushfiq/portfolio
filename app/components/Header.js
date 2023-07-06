@@ -186,7 +186,7 @@ export default function Header() {
       navMenuTimeline.kill();
       mm.kill();
     };
-  }, [pathname]);
+  }, [pathname, router]);
 
   return (
     <header className="fixed inset-0 -translate-y-24 invisible z-[2] flex flex-col h-20 p-6 bg-white bg-opacity-75 backdrop-blur-sm shadow-lg sm:px-12 md:px-16 lg:h-[86px] lg:px-20 xl:px-36 2xl:px-56">

@@ -33,7 +33,7 @@ export default function Cover({ projectTitle, projectMockups }) {
     });
 
     return () => ctx.revert(); // Clean up the GSAP animations when the component unmounts
-  }, [activeCoverId]);
+  }, [activeCoverId, projectMockups.length]);
 
   return (
     <div ref={coverContainerRef} className="invisible relative h-full w-full">
