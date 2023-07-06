@@ -72,62 +72,58 @@ export default function Portfolio() {
   }, []);
 
   useLayoutEffect(() => {
-    // Function that handles swipe actions during observation
-    const handleSwipe = (slideToTargetedProject) => {
-      observer.disable();
-      slideToTargetedProject();
-      observer.enable();
+    // Function that updates the cursor style on the project carousel
+    const updateCursor = (eventType) => {
+      projectRef.current.classList.remove(eventType === 'press' ? 'cursor-grab' : 'cursor-grabbing');
+      projectRef.current.classList.add(eventType === 'press' ? 'cursor-grabbing' : 'cursor-grab');
     };
 
-    // Observe left/right swiping on the project carousel
+    // Function that handles swipe actions during observation
+    const handleSwipe = (swipeDirection) => {
+      // Exit if swiped left and active project on the carousel is the last one, or vice versa
+      if (swipeDirection === -1 && activeProjectId === lastProjectId) return;
+      if (swipeDirection === 1 && activeProjectId === firstProjectId) return;
+
+      observer.disable();
+      setActiveProjectId(prevActiveProjectId => prevActiveProjectId + swipeDirection * (-1));
+      updateCursor('release');
+    };
+
+    // Observe left/right swipe and mouse press/release on the project carousel
     const observer = ScrollTrigger.observe({
       target: projectRef.current,
       type: 'touch, pointer',
       tolerance: 75,
       preventDefault: true,
-      onLeft: () => handleSwipe(slideToNextProject),
-      onRight: () => handleSwipe(slideToPrevProject),
-      onPress: displayGrabbingCursor,
-      onRelease: displayGrabCursor,
+      onLeft: () => handleSwipe(-1),
+      onRight: () => handleSwipe(1),
+      onPress: () => updateCursor('press'),
+      onRelease: () => updateCursor('release'),
     });
 
     return () => observer.kill();
-  }, [activeProjectId]);
+  }, [activeProjectId, lastProjectId]);
 
-  // Function that slides onto the previous project to perform a right-swipe on the project carousel
-  const slideToPrevProject = (event) => {
+  // Function that slides to the previous project on the project carousel
+  const slideToPrevProject = () => {
     /* If the curent active project is not the first project,
        slide to the previous project on the carousel,
        otherwise, ignore and do not slide
     */
     if (activeProjectId !== firstProjectId) {
       setActiveProjectId(prevActiveProjectId => prevActiveProjectId - 1);
-      !event && displayGrabCursor(); // If swiped (not a button event), update cursor to cursor-grab
     }
   };
 
-  // Function that slides onto the next project to perform a left-swipe on the project carousel
-  const slideToNextProject = (event) => {
+  // Function that slides to the next project on the project carousel
+  const slideToNextProject = () => {
     /* If the curent active project is not the last project,
        slide to the next project on the carousel,
        otherwise, ignore and do not slide
     */
     if (activeProjectId !== lastProjectId) {
       setActiveProjectId(prevActiveProjectId => prevActiveProjectId + 1);
-      !event && displayGrabCursor(); // If swiped (not a button event), update cursor to cursor-grab
     }
-  };
-
-  // Function that updates cursor style to display a grabbing-cursor on the project carousel
-  const displayGrabbingCursor = () => {
-    projectRef.current.classList.remove('cursor-grab');
-    projectRef.current.classList.add('cursor-grabbing');
-  };
-
-  // Function that updates cursor style to display a grab-cursor on the project carousel
-  const displayGrabCursor = () => {
-    projectRef.current.classList.remove('cursor-grabbing');
-    projectRef.current.classList.add('cursor-grab');
   };
 
   return (
