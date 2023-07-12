@@ -1,50 +1,55 @@
 'use client';
 
 import Image from "next/image";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { gsap } from "gsap";
 
-export default function Cover({ projectTitle, projectMockups }) {
-  const [activeCoverId, setActiveCoverId] = useState(0); // State to track the active cover image ID
-  const coverContainerRef = useRef(null);
+export default function Cover({ coverContainerRef, projectTitle, projectMockups }) {
+  const [isFirstCoverLoaded, setIsFirstCoverLoaded] = useState(false); // State to track the loading status of the first cover image
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Function to manage new active cover id after completing the going-out-of-frame animation
-      const handleActiveCoverId = () => {
-        /* If the last cover image is reached, reset to the first cover image,
-          otherwise, render the next cover image on the carousel
-        */
-        if (activeCoverId === projectMockups.length - 1) {
-          setActiveCoverId(0);
-        } else {
-          setActiveCoverId(prevActiveCover => prevActiveCover + 1);
-        }
-      };
+      if (isFirstCoverLoaded) {
+        const coverContainer = coverContainerRef.current,
+          coverImages = [...coverContainer.children];
 
-      // Cycle through the cover images every 3 seconds with animation
-      gsap.to(coverContainerRef.current, {
-        keyframes: [
-          { xPercent: -100, duration: 0 },
-          { autoAlpha: 1, xPercent: 0, delay: 0.25, duration: 0.5, ease: 'power1.inOut' },
-          { autoAlpha: 0, xPercent: 100, delay: 2.25, duration: 0.5, ease: 'power1.inOut', onComplete: handleActiveCoverId },
-        ],
-      });
+        // Timeline for infinite cover image cycle animation
+        const tl = gsap.timeline({
+          delay: 0.25,
+          repeat: -1,
+          defaults: { duration: 0.75, ease: 'power1.inOut' },
+        });
+
+        // Cycle through each of the cover image every 2 seconds with animation
+        coverImages.forEach((coverImage, index) => {
+          index === 0
+            ? tl.set(coverImages, { xPercent: -100 })
+            : tl.set(coverContainer, { x: `${-(100 * index)}vw` });
+
+          tl.to(coverImage, { autoAlpha: 1, xPercent: 0 })
+            .to(coverImage, { autoAlpha: 0, xPercent: 100 }, '>2');
+        });
+      }
     });
 
     return () => ctx.revert(); // Clean up the GSAP animations when the component unmounts
-  }, [activeCoverId, projectMockups.length]);
+  }, [isFirstCoverLoaded]);
 
   return (
-    <div ref={coverContainerRef} className="invisible relative h-full w-full">
-      <Image
-        className="object-contain"
-        src={projectMockups[activeCoverId]}
-        alt={`${projectTitle} Cover`}
-        fill
-        sizes="50vh"
-        priority
-      />
+    <div ref={coverContainerRef} className="flex w-min h-[50vh] py-12 bg-neutral-100">
+      {projectMockups.map((projectMockup, index) => (
+        <div key={index} className="invisible relative w-screen h-full">
+          <Image
+            className="object-contain px-6 sm:px-12 md:px-16 lg:px-20 xl:px-0"
+            src={projectMockup}
+            alt={`${projectTitle} Cover`}
+            fill
+            sizes="75vh"
+            priority={index === 0 ? true : false}
+            onLoadingComplete={() => index === 0 && setIsFirstCoverLoaded(true)}
+          />
+        </div>
+      ))}
     </div>
   );
 }

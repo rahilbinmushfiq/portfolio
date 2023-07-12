@@ -61,12 +61,11 @@ export default function Section({ project }) {
   return (
     <section ref={sectionRef} className="invisible overflow-x-hidden">
       {/* Project Cover */}
-      <div ref={coverRef} className="flex justify-center items-center h-[50vh] w-full overflow-hidden px-6 py-12 bg-neutral-100 sm:px-12 md:px-16 lg:px-20 xl:px-0">
-        <Cover
-          projectTitle={project.title}
-          projectMockups={project.mockups}
-        />
-      </div>
+      <Cover
+        coverContainerRef={coverRef}
+        projectTitle={project.title}
+        projectMockups={project.mockups}
+      />
       {/* Project Details */}
       <div className="space-y-14 py-8 px-6 sm:px-12 sm:py-10 md:px-16 lg:py-14 lg:px-20 xl:px-64 2xl:px-0 2xl:max-w-[60rem] 2xl:mx-auto">
         <div className="space-y-7">
