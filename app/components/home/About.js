@@ -12,7 +12,7 @@ export default function About() {
     headerRef = useRef(null),
     desktopImageRef = useRef(null),
     mobileImageRef = useRef(null),
-    subsectionsRef = useRef([]);
+    subsectionsRef = useRef(null);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -63,7 +63,7 @@ export default function About() {
           <h3><span />About</h3>
           <p>In this section, you can take a quick look at my life as a frontend developer.</p>
         </div>
-        {/* Tablet Section Image */}
+        {/* Mobile Section Image */}
         <Image
           ref={mobileImageRef}
           className="w-full h-auto sm:pb-6 lg:pb-12 xl:hidden"
@@ -72,17 +72,17 @@ export default function About() {
         />
         <div ref={subsectionsRef} className="space-y-4 [&>div]:about-subsection lg:space-y-10 xl:space-y-6 2xl:space-y-7">
           {/* Personal Subsection */}
-          <div ref={element => { if (subsectionsRef.current) subsectionsRef.current[0] = element }}>
+          <div>
             <h4>Personal</h4>
             <p>When I&apos;m not coding, you can find me playing video games, watching football, reading about the latest trends in web development, or exploring new technologies.</p>
           </div>
           {/* Technical Subsection */}
-          <div ref={element => { if (subsectionsRef.current) subsectionsRef.current[1] = element }}>
+          <div>
             <h4>Technical</h4>
             <p>In my work, I focus on creating aesthetic and functional interfaces using the latest trends and best practices. I believe in collaboration with other developers and designers to create websites that satisfy the users.</p>
           </div>
           {/* Education Subsection */}
-          <div ref={element => { if (subsectionsRef.current) subsectionsRef.current[2] = element }}>
+          <div>
             <h4>Education</h4>
             <p>I earned my Bachelor&apos;s degree in Computer Science and Engineering from Brac University, graduating with a CGPA of 3.63 out of 4.00.</p>
           </div>
