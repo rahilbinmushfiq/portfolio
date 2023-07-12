@@ -1,11 +1,11 @@
 export const projects = [
   {
     id: 0,
-    mockup: '/mockups/gameonMockup.png',
+    mockupAllDevices: '/mockups/gameOn/allDevices.webp',
     mockups: [
-      '/mockups/gameonIPhone12ProMockup.png',
-      '/mockups/gameonIPadProMockup.png',
-      '/mockups/gameonIMacProMockup.png',
+      '/mockups/gameOn/iPhone12Pro.webp',
+      '/mockups/gameOn/iPadPro.webp',
+      '/mockups/gameOn/iMacPro.webp',
     ],
     title: 'Game On',
     summary: 'A responsive and interactive game review web app that allows users to browse, search, and filter video games, as well as to read and submit reviews.',
@@ -61,7 +61,12 @@ export const projects = [
   },
   {
     id: 1,
-    mockup: '/mockups/portfolioMockup.png',
+    mockupAllDevices: '/mockups/portfolio/allDevices.webp',
+    mockups: [
+      '/mockups/portfolio/iPhone12Pro.webp',
+      '/mockups/portfolio/iPadPro.webp',
+      '/mockups/portfolio/iMacPro.webp',
+    ],
     title: 'Portfolio',
     summary: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt animi numquam cumque in sed similique eum consequuntur optio.',
     techStack: [

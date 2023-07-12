@@ -2,18 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { TbWorldWww, TbCode } from "react-icons/tb";
 
-export default function Project({ projectData: { id, mockup, title, summary, techStack, demoLink, codeLink } }) {
+export default function Project({ projectData: { id, mockupAllDevices, title, summary, techStack, demoLink, codeLink } }) {
+
   return (
     <div className="flex flex-col justify-center items-center gap-y-6 min-w-full px-10 sm:gap-y-10 sm:px-36 md:px-[10rem] lg:gap-y-14 lg:px-[11rem] xl:flex-row xl:gap-y-0 xl:gap-x-16 xl:px-36 2xl:gap-x-24 2xl:px-56">
       {/* Project Image */}
       <div className="relative w-full h-1/3 sm:h-2/5 xl:h-3/5 xl:basis-[45%] 2xl:h-2/3 2xl:basis-1/2">
         <Image
           className="object-contain"
-          src={mockup}
+          src={mockupAllDevices}
           fill
           sizes="1200px"
           alt={`${title} Mockup`}
-          draggable={false}
         />
       </div>
       {/* Project Overview */}
