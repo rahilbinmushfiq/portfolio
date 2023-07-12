@@ -1,8 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { gsap } from "gsap";
 import { TbWorldWww, TbCode } from "react-icons/tb";
 
 export default function Project({ projectData: { id, mockupAllDevices, title, summary, techStack, demoLink, codeLink } }) {
+  const router = useRouter();
+
+  const handlePageTransition = (event) => {
+    event.preventDefault();
+
+    gsap.to('#home', {
+      autoAlpha: 0,
+      y: -25,
+      duration: 0.25,
+      ease: 'power1.inOut',
+      onComplete: () => router.push(event.target.href),
+    });
+  };
 
   return (
     <div className="flex flex-col justify-center items-center gap-y-6 min-w-full px-10 sm:gap-y-10 sm:px-36 md:px-[10rem] lg:gap-y-14 lg:px-[11rem] xl:flex-row xl:gap-y-0 xl:gap-x-16 xl:px-36 2xl:gap-x-24 2xl:px-56">
@@ -37,7 +52,7 @@ export default function Project({ projectData: { id, mockupAllDevices, title, su
         {/* Button Segment */}
         <div className="project-btn">
           <button className="col-span-2 text-white bg-[#7342D5] hover:bg-[#864DF8] lg:col-span-1">
-            <Link href={`/project/${id}`}>
+            <Link href={`/project/${id}`} onClick={handlePageTransition}>
               <p>Learn More</p>
             </Link>
           </button>

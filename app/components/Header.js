@@ -61,6 +61,7 @@ export default function Header() {
     let mm = gsap.matchMedia(),
       isSmallerScreen = window.innerWidth < 1024,
       headerOffsetHeight = isSmallerScreen ? 80 : 86,
+      logo = document.getElementById('logo-container').firstChild,
       navButton, navLinks;
 
     // Timeline for transforming the navigation button into a close button
@@ -138,17 +139,19 @@ export default function Header() {
       navMenuTimeline.reversed() ? navMenuTimeline.play() : navMenuTimeline.reverse();
     };
 
-    // Function that handles click events on navigation links
-    const handleNavLinkClick = (event) => {
+    // Function that handles click events on header logo and navigation links
+    const handleHeaderItemClick = (event) => {
       event.preventDefault();
 
-      /* First, auto-close the navigation menu (for smaller devices),
+      /* First, auto-close the navigation menu if it's open (for smaller devices),
          next, redirect to homepage if user is not on the homepage,
          finally, set new id for the section to be scrolled
       */
-      if (isSmallerScreen) handleNavMenu();
+      if (isSmallerScreen && !navButtonTimeline.reversed()) handleNavMenu();
       setTimeout(() => {
-        if (pathname !== '/') router.push('/');
+        pathname !== '/' && gsap.to('#project-details', {
+          autoAlpha: 0, y: -25, duration: 0.25, ease: 'power1.inOut', onComplete: () => router.push('/'),
+        });
         setNavigationSectionId(event.target.hash);
       }, isSmallerScreen ? 800 : 0);
     };
@@ -167,20 +170,20 @@ export default function Header() {
         navLinks = gsap.utils.toArray('#mobile-nav ul li a');
       }
 
-      // Listen for click event on each of the navigation link
-      navLinks.forEach(navLink => {
-        navLink.addEventListener('click', handleNavLinkClick);
-      });
-
-      // Listen for click event on the navigation button (for smaller devices)
+      // Listen for click events on the logo, navigation button (if smaller screen), and navigation links
+      logo.addEventListener('click', handleHeaderItemClick);
       isSmallerScreen && navButton.addEventListener('click', handleNavMenu);
+      navLinks.forEach(navLink => {
+        navLink.addEventListener('click', handleHeaderItemClick);
+      });
     });
 
     // Clean up all the event listeners and GSAP tweens when the component unmounts
     return () => {
+      logo.removeEventListener('click', handleHeaderItemClick);
       navButton && navButton.removeEventListener('click', handleNavMenu);
       navLinks.forEach(navLink => {
-        navLink.removeEventListener('click', handleNavLinkClick);
+        navLink.removeEventListener('click', handleHeaderItemClick);
       });
       navButtonTimeline.kill();
       navMenuTimeline.kill();
@@ -192,8 +195,8 @@ export default function Header() {
     <header className="fixed inset-0 -translate-y-24 invisible z-[2] flex flex-col h-20 p-6 bg-white bg-opacity-75 backdrop-blur-sm shadow-[0_6px_36px_0_rgba(0,0,0,0.075)] sm:px-12 md:px-16 lg:h-[86px] lg:px-20 xl:px-36 2xl:px-56">
       <div className="flex justify-between items-center -translate-y-3.5 invisible lg:items-center lg:font-medium">
         {/* Website Logo */}
-        <div>
-          <Link href="/">
+        <div id="logo-container">
+          <Link href="/" className="inline-block">
             <p className={`${leckerliOne.className} inline text-2xl`}>Rahil.dev</p>
           </Link>
         </div>
