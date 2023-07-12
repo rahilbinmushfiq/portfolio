@@ -10,7 +10,7 @@
 
 @layer utilities {
   #desktop-nav ul li {
-    @apply transition-colors duration-300 ease-in-out hover:text-[#864DF8];
+    @apply font-semibold text-neutral-500 transition-colors duration-300 ease-in-out hover:text-[#864DF8];
   }
 
   .section-header h3 {
