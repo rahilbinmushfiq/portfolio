@@ -2,9 +2,11 @@
 
 import hero from "@/public/hero.svg";
 import Image from "next/image";
+import Link from "next/link";
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 
 export default function Hero() {
@@ -65,6 +67,21 @@ export default function Hero() {
     return () => ctx.revert(); // Clean up the GSAP animations when the component unmounts
   }, []);
 
+  // Function that handles hero button click event to scroll down to its corresponding section
+  const handleHeroButtonClick = (event) => {
+    event.preventDefault();
+
+    gsap.registerPlugin(ScrollToPlugin);
+    gsap.to(window, {
+      duration: 0.5,
+      ease: 'power1.inOut',
+      scrollTo: {
+        y: event.target.hash,
+        offsetY: window.innerWidth < 1024 ? 80 : 86,
+      },
+    });
+  };
+
   return (
     <section id="hero" ref={sectionRef} className="invisible home-section flex flex-col justify-center h-[calc(100vh_-_80px)] lg:h-[calc(100vh_-_86px)]">
       <div className="grow flex flex-col gap-y-4 xl:flex-row xl:gap-y-0">
@@ -83,8 +100,16 @@ export default function Hero() {
           </div>
           {/* Hero Section Buttons */}
           <div ref={buttonRefs} className="flex gap-x-4 [&>button]:hero-button xl:gap-x-6">
-            <button className="bg-[#7342D5] text-white hover:bg-[#864DF8]">See my work</button>
-            <button className="text-[#7342D5] hover:bg-[#864DF8] hover:text-white">Contact me</button>
+            <button className="bg-[#7342D5] text-white hover:bg-[#864DF8]">
+              <Link href="/#portfolio" onClick={handleHeroButtonClick}>
+                See my work
+              </Link>
+            </button>
+            <button className="text-[#7342D5] hover:bg-[#864DF8] hover:text-white">
+              <Link href="/#contact" onClick={handleHeroButtonClick}>
+                Contact me
+              </Link>
+            </button>
           </div>
         </div>
         {/* Hero Section Image */}
