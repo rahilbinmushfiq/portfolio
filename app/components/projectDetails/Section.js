@@ -1,6 +1,6 @@
 'use client';
 
-import Cover from "@/app/components/projectDetails/cover";
+import Cover from "@/app/components/projectDetails/Cover";
 import Image from "next/image";
 import Link from "next/link";
 import { useLayoutEffect, useRef } from "react";
