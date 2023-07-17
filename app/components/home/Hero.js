@@ -22,6 +22,9 @@ export default function Hero() {
     gsap.registerPlugin(ScrollTrigger);
 
     const headerOffsetHeight = document.querySelector('header').offsetHeight,
+      isMobileScreen = window.screen.width < window.screen.height,
+      isScreenTooSmall = (window.screen.width < 350) || (window.screen.height < 800),
+      isMobileScreenTooSmall = isMobileScreen && isScreenTooSmall,
       isDesktop = window.screen.width >= 1280,
       // Get the elements needed for animation from their references
       sectionElement = sectionRef.current,
@@ -36,7 +39,7 @@ export default function Hero() {
       const tl = gsap.timeline({
         delay: 0.5,
         scrollTrigger: {
-          trigger: sectionElement,
+          trigger: isMobileScreenTooSmall ? '#home' : sectionElement,
           start: `top-=${headerOffsetHeight} bottom`,
           end: `bottom-=${headerOffsetHeight} top`,
           toggleActions: 'restart reset restart reset',
@@ -83,15 +86,15 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" ref={sectionRef} className="invisible home-section flex flex-col justify-center h-[calc(100vh_-_80px)] lg:h-[calc(100vh_-_86px)]">
+    <section id="hero" ref={sectionRef} className="home-section invisible flex flex-col justify-center pt-12 mt-[80px] min-h-[98vh] xs:min-h-0 xs:h-[calc(100vh_-_80px)] xs:py-0 lg:mt-[86px] lg:h-[calc(100vh_-_86px)] landscape:min-h-0 landscape:py-0">
       <div className="grow flex flex-col gap-y-4 xl:flex-row xl:gap-y-0">
-        <div className="max-xl:grow sm:max-h-[25rem] lg:max-h-[30rem] xl:max-h-none flex flex-col justify-center gap-y-12 px-6 sm:px-12 md:px-16 lg:px-20 xl:basis-[40%] xl:gap-y-16 xl:pr-0 xl:pl-36 2xl:basis-[38%] 2xl:gap-y-20 2xl:pl-56">
+        <div className="grow flex flex-col justify-center gap-y-8 px-6 xs:gap-y-12 sm:max-h-[25rem] sm:px-12 md:px-16 lg:max-h-[30rem] lg:px-20 xl:grow-0 xl:basis-[40%] xl:gap-y-16 xl:max-h-none xl:pr-0 xl:pl-36 2xl:basis-[38%] 2xl:gap-y-20 2xl:pl-56 3xl:pl-[28rem]">
           {/* Hero Section Header */}
           <div ref={textRefs} className="space-y-3 lg:space-y-5 xl:space-y-7">
-            <h2 className="-mb-2 text-base font-medium sm:max-xl:text-xl xl:-mb-4 xl:font-medium xl:text-lg">
+            <h2 className="-mb-2 text-sm font-medium xs:text-base sm:max-xl:text-xl xl:-mb-4 xl:font-medium xl:text-lg 3xl:text-xl">
               Hi, I&apos;m <span className="text-[#7342D5]">Rahil Bin Mushfiq</span>.
             </h2>
-            <h1 className="text-[3.5rem]/[1.15] font-semibold lg:text-7xl xl:text-6xl 2xl:text-[5.5rem]/[1.15]">
+            <h1 className="font-semibold text-5xl/[1.15] xs:text-[3.5rem]/[1.15] lg:text-7xl/[1.15] xl:text-6xl/[1.15] 2xl:text-[5.5rem]/[1.15] 3xl:text-8xl/[1.2]">
               Frontend Developer.
             </h1>
             <p className="text-gray-600">
@@ -113,12 +116,12 @@ export default function Hero() {
           </div>
         </div>
         {/* Hero Section Image */}
-        <div ref={imageRef} className="flex justify-center items-center px-6 sm:px-12 md:px-16 xl:grow xl:pr-0 xl:pl-16 2xl:px-24">
+        <div ref={imageRef} className="flex justify-center items-center px-6 py-12 xs:py-0 sm:px-12 md:px-16 xl:grow xl:pr-0 xl:pl-16 2xl:px-24 3xl:pr-12 3xl:pl-32 landscape:py-0">
           <Image className="w-full h-auto" src={hero} alt="developer-working" priority />
         </div>
       </div>
       {/* Mobile Swipe-Indicator */}
-      <div ref={mobileIndicatorRef} className="indicator-wrapper flex xl:hidden">
+      <div ref={mobileIndicatorRef} className="indicator-wrapper hidden xs:flex xl:hidden">
         <p>SWIPE UP</p>
         <FaChevronUp />
       </div>

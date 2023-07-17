@@ -31,7 +31,7 @@ export default function Header() {
   useLayoutEffect(() => {
     let tl = gsap.timeline({
       defaults: { autoAlpha: 1, y: 0, ease: 'power3.inOut' },
-    }).to('header', { duration: 0.5 })
+    }).to('header', { backdropFilter: 'blur(6px)', backgroundColor: 'rgb(255 255 255 / 0.75)', duration: 0.5 })
       .to('header div', { duration: 0.35 });
 
     return () => tl.kill();
@@ -95,8 +95,8 @@ export default function Header() {
       // First, transform the header into a navigation menu and remove its background transparency
       .fromTo(
         'header',
-        { backgroundColor: 'transparent' },
-        { backgroundColor: 'white', duration: 0.01 },
+        { backdropFilter: 'blur(6px)', backgroundColor: 'rgb(255 255 255 / 0.75)' },
+        { backdropFilter: 'blur(0)', backgroundColor: 'rgb(255 255 255 / 1)', duration: 0.01 },
         '<',
       ).fromTo(
         'header',
@@ -107,7 +107,7 @@ export default function Header() {
       // Next, animate the colors of header and navigation button
       .fromTo(
         'header',
-        { backgroundColor: 'white', color: 'black' },
+        { backgroundColor: 'rgb(255 255 255 / 1)', color: 'black' },
         { backgroundColor: '#7342D5', color: 'white' },
       ).fromTo(
         '.line',
@@ -192,7 +192,7 @@ export default function Header() {
   }, [pathname, router]);
 
   return (
-    <header className="fixed inset-0 -translate-y-24 invisible z-[2] flex flex-col h-20 p-6 bg-white bg-opacity-75 backdrop-blur-sm shadow-[0_6px_36px_0_rgba(0,0,0,0.075)] sm:px-12 md:px-16 lg:h-[86px] lg:px-20 xl:px-36 2xl:px-56">
+    <header className="fixed inset-0 -translate-y-24 invisible z-[2] flex flex-col h-20 p-6 shadow-[0_6px_36px_0_rgba(0,0,0,0.075)] sm:px-12 md:px-16 lg:h-[86px] lg:px-20 xl:px-36 2xl:px-56 3xl:px-[28rem]">
       <div className="flex justify-between items-center -translate-y-3.5 invisible lg:items-center lg:font-medium">
         {/* Website Logo */}
         <div id="logo-container">
@@ -240,7 +240,7 @@ export default function Header() {
           </Link>
         </div>
       </div>
-      <div id="mobile-nav-wrapper" className="invisible grow flex flex-col justify-center overflow-y-hidden text-lg text-center font-medium sm:text-2xl">
+      <div id="mobile-nav-wrapper" className="invisible grow flex flex-col justify-center overflow-y-hidden text-base text-center font-medium xs:text-lg sm:text-2xl">
         <nav id="mobile-nav">
           {/* Navigation Links */}
           <ul className="w-fit space-y-11 mx-auto sm:space-y-14">

@@ -8,18 +8,22 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 export default function Main({ children }) {
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-    document.body.style.overflow = 'hidden'; // Hide the scrollbar
 
     let mm = gsap.matchMedia(),
       headerOffsetHeight = document.querySelector('header').offsetHeight,
       navLinks, sections, isScrollInProgress;
 
     mm.add({
-      isExtraSmallScreen: '(max-width: 639px)',
+      isTooSmallScreen: '((max-width: 349px) and (max-height: 799px))',
+      isExtraSmallScreen: '(min-width: 350px) and (min-height: 800px) and (max-width: 639px)',
       isSmallToMediumScreen: '(min-width: 640px) and (max-width: 1023px)',
       isLargerScreen: '(min-width: 1024px)',
     }, (context) => {
-      let { isExtraSmallScreen, isSmallToMediumScreen, isLargerScreen } = context.conditions;
+      let { isTooSmallScreen, isExtraSmallScreen, isSmallToMediumScreen, isLargerScreen } = context.conditions;
+
+      if (isTooSmallScreen) return;
+
+      document.body.style.overflow = 'hidden'; // Hide the scrollbar
 
       // Get the section elements based on user-device
       if (isExtraSmallScreen) {
@@ -62,11 +66,10 @@ export default function Main({ children }) {
         */
         ScrollTrigger.observe({
           target: section,
-          type: 'wheel, touch, pointer',
+          type: 'wheel, touch',
           wheelSpeed: -1,
           scrollSpeed: -1,
           tolerance: 75,
-          preventDefault: true,
           onUp: () => !isScrollInProgress && scrollToSection(sections[sectionIndex + 1]),
           onDown: () => !isScrollInProgress && scrollToSection(sections[sectionIndex - 1]),
         });
@@ -84,7 +87,7 @@ export default function Main({ children }) {
   }, []);
 
   return (
-    <main id="home" className="[&>section]:mt-[80px] lg:[&>section]:mt-[86px]">
+    <main id="home" className="xs:[&>section]:mt-[80px] lg:[&>section]:mt-[86px]">
       {children}
     </main>
   );

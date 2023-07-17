@@ -18,6 +18,9 @@ export default function About() {
     gsap.registerPlugin(ScrollTrigger);
 
     const headerOffsetHeight = document.querySelector('header').offsetHeight,
+      isMobileScreen = window.screen.width < window.screen.height,
+      isScreenTooSmall = (window.screen.width < 350) || (window.screen.height < 800),
+      isMobileScreenTooSmall = isMobileScreen && isScreenTooSmall,
       isDesktop = window.screen.width >= 1280,
       // Get the elements needed for animation from their references
       sectionElement = sectionRef.current,
@@ -30,7 +33,7 @@ export default function About() {
       const tl = gsap.timeline({
         delay: 0.5,
         scrollTrigger: {
-          trigger: sectionElement,
+          trigger: isMobileScreenTooSmall ? '#home' : sectionElement,
           start: `top-=${headerOffsetHeight} bottom`,
           end: `bottom-=${headerOffsetHeight} top`,
           toggleActions: 'restart reset restart reset',
@@ -49,7 +52,7 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="invisible home-section flex flex-col justify-center items-center gap-y-4 px-6 h-[calc(100vh_-_80px)] sm:gap-y-12 sm:px-12 md:px-16 lg:gap-y-24 lg:h-[calc(100vh_-_86px)] lg:px-20 xl:flex-row xl:gap-y-0 xl:pr-0 xl:pl-36 2xl:pl-56 2xl:gap-x-12">
+    <section id="about" ref={sectionRef} className="home-section invisible flex flex-col justify-center items-center gap-y-4 px-6 py-12 xs:py-0 min-h-[calc(100vh_-_80px)] sm:gap-y-12 sm:px-12 md:px-16 lg:gap-y-24 lg:h-[calc(100vh_-_86px)] lg:px-20 xl:flex-row xl:gap-y-0 xl:pr-0 xl:pl-36 2xl:pl-56 2xl:gap-x-12 3xl:pl-[28rem] 3xl:gap-x-20 landscape:py-0">
       {/* Desktop Section Image */}
       <Image
         ref={desktopImageRef}
@@ -57,7 +60,7 @@ export default function About() {
         src={graduationImage}
         alt="Graduation"
       />
-      <div className="space-y-6 sm:space-y-8 lg:space-y-10 xl:basis-[48%] xl:pr-16 2xl:basis-[42%]">
+      <div className="space-y-6 sm:space-y-8 lg:space-y-10 xl:basis-[48%] xl:pr-16 2xl:basis-[42%] 3xl:basis-[35%]">
         {/* Section Header */}
         <div ref={headerRef} className="section-header">
           <h3><span />About</h3>
@@ -70,7 +73,7 @@ export default function About() {
           src={graduationImage}
           alt="Graduation"
         />
-        <div ref={subsectionsRef} className="space-y-4 [&>div]:about-subsection lg:space-y-10 xl:space-y-6 2xl:space-y-7">
+        <div ref={subsectionsRef} className="space-y-4 [&>div]:about-subsection lg:space-y-10 xl:space-y-6 2xl:space-y-7 3xl:space-y-9">
           {/* Personal Subsection */}
           <div>
             <h4>Personal</h4>

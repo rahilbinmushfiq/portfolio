@@ -24,6 +24,7 @@ export default function Contact() {
     headerRef = useRef(null),
     formRef = useRef(null),
     altSubsectionRef = useRef(null),
+    altSubsectionContainerRef = useRef(null),
     subHeaderRef = useRef(null),
     altOptionsRef = useRef(null);
 
@@ -31,6 +32,9 @@ export default function Contact() {
     gsap.registerPlugin(ScrollTrigger);
 
     const headerOffsetHeight = document.querySelector('header').offsetHeight,
+      isMobileScreen = window.screen.width < window.screen.height,
+      isScreenTooSmall = (window.screen.width < 350) || (window.screen.height < 800),
+      isMobileScreenTooSmall = isMobileScreen && isScreenTooSmall,
       isMobile = window.screen.width < 640,
       axis = isMobile ? 'y' : 'x',
       // Get the elements needed for animation from their references
@@ -39,6 +43,7 @@ export default function Contact() {
       headingUnderlineElement = headerRef.current.firstChild.firstChild,
       formElements = formRef.current.children,
       altSubsectionElement = altSubsectionRef.current,
+      altSubsectionContainerElement = altSubsectionContainerRef.current,
       subHeadingElements = subHeaderRef.current.children,
       altOptionsElements = altOptionsRef.current.children;
 
@@ -47,7 +52,7 @@ export default function Contact() {
       const formSubsectionTimeline = gsap.timeline({
         delay: 0.5,
         scrollTrigger: {
-          trigger: formSubsectionElement,
+          trigger: isMobileScreenTooSmall ? '#home' : formSubsectionElement,
           start: `top-=${headerOffsetHeight} bottom`,
           end: `bottom-=${headerOffsetHeight} top`,
           toggleActions: 'restart reset restart reset',
@@ -66,7 +71,7 @@ export default function Contact() {
       const altSubsectionTimeline = gsap.timeline({
         delay: 0.5,
         scrollTrigger: {
-          trigger: altSubsectionElement,
+          trigger: isMobileScreenTooSmall ? '#home' : altSubsectionElement,
           start: `top-=${headerOffsetHeight}px bottom-=100px`,
           end: `bottom-=${headerOffsetHeight}px top+=100px`,
           toggleActions: 'restart reset restart reset',
@@ -83,6 +88,7 @@ export default function Contact() {
 
       // The on-scroll reveal animation of alternative subsection in timeline
       altSubsectionTimeline
+        .set(altSubsectionContainerElement, { autoAlpha: 1 })
         .from(subHeadingElements, { [axis]: isMobile ? 25 : -25, stagger: { amount: 0.2 } })
         .from(altOptionsElements, { [axis]: isMobile ? 50 : -50, stagger: { amount: 0.5 } }, '<');
     });
@@ -157,15 +163,15 @@ export default function Contact() {
     <>
       <section ref={sectionRef} id="contact" className="overflow-hidden sm:flex sm:h-[calc(100vh_-_(80px_+_60px))] sm:[&>div]:h-full sm:[&>div]:w-min lg:h-[calc(100vh_-_(86px_+_60px))]">
         {/* Contact Form Subsection */}
-        <div ref={formSubsectionRef} className="invisible home-section flex items-center h-[calc(100vh_-_80px)] p-6 sm:basis-1/2 sm:pl-12 sm:pr-8 md:pl-16 lg:pl-20 lg:pr-12 xl:pl-36 xl:pr-16 xl:max-2xl:basis-[55%] 2xl:pl-56 2xl:pr-20">
-          <div className="space-y-14 sm:space-y-20 xl:space-y-14 2xl:space-y-16">
+        <div ref={formSubsectionRef} className="home-section flex items-center min-h-[calc(100vh_-_80px)] px-6 py-12 xs:invisible xs:py-0 xs:min-h-0 xs:h-[calc(100vh_-_80px)] sm:basis-1/2 sm:pl-12 sm:pr-8 md:pl-16 lg:pl-20 lg:pr-12 xl:pl-36 xl:pr-16 xl:max-2xl:basis-[55%] 2xl:pl-56 2xl:pr-20 3xl:pl-[28rem] 3xl:pr-28 landscape:invisible landscape:min-h-0 landscape:py-0">
+          <div className="space-y-14 sm:space-y-20 xl:space-y-14 2xl:space-y-16 3xl:space-y-20">
             {/* Section Header */}
             <div ref={headerRef} className="section-header">
               <h3><span />Contact</h3>
               <p>Seeking a dedicated frontend developer? Feel free to send me a message to discuss how I can contribute to your success.</p>
             </div>
             {/* Contact Form */}
-            <form ref={formRef} className="space-y-7 [&>div]:form-field-wrapper sm:space-y-9 xl:grid xl:grid-cols-2 xl:gap-8 xl:space-y-0 2xl:gap-10" onSubmit={handleFormSubmission}>
+            <form ref={formRef} className="space-y-7 [&>div]:form-field-wrapper sm:space-y-9 xl:grid xl:grid-cols-2 xl:gap-8 xl:space-y-0 2xl:gap-10 3xl:gap-12" onSubmit={handleFormSubmission}>
               <div className="xl:col-span-1">
                 <label htmlFor="name">Name</label>
                 <input ref={nameRef} type="text" id="name" autoComplete="off" />
@@ -179,7 +185,7 @@ export default function Contact() {
                 <textarea className="resize-none h-[20vh]" ref={messageRef} id="message" />
               </div>
               <button
-                className={`flex items-center justify-center gap-x-2 w-full overflow-hidden py-3.5 rounded-sm font-medium transition-colors duration-100 ${isProcessing ? 'cursor-not-allowed bg-[#e2d2ff] text-black hover:bg-[#e9deff]' : 'cursor-pointer bg-[#7342D5] text-white hover:bg-[#864DF8]'} xl:gap-x-3 xl:w-1/3 xl:col-span-2`}
+                className={`flex items-center justify-center gap-x-2 w-full overflow-hidden py-3.5 rounded-sm font-medium transition-colors duration-100 ${isProcessing ? 'cursor-not-allowed bg-[#e2d2ff] text-black hover:bg-[#e9deff]' : 'cursor-pointer bg-[#7342D5] text-white hover:bg-[#864DF8]'} lg:w-5/12 xl:gap-x-3 xl:w-[36%] xl:col-span-2 2xl:w-[30%]`}
                 disabled={isProcessing} // Disable button if form submission is ongoing
               >
                 <p className={isProcessing ? 'order-1' : ''}>
@@ -193,11 +199,11 @@ export default function Contact() {
           </div>
         </div>
         {/* Alternative Contact Subsection */}
-        <div ref={altSubsectionRef} className="home-section flex items-center h-[calc(100vh_-_(80px_+_56px))] p-6 bg-[#7342D5] sm:invisible sm:grow sm:pl-8 sm:pr-12 md:pr-16 lg:pl-12 lg:pr-20 xl:pl-16 xl:pr-36 2xl:pl-20 2xl:pr-56">
-          <div className="space-y-20 sm:max-xl:space-y-24 xl:max-2xl:space-y-16">
+        <div ref={altSubsectionRef} className="home-section flex items-center min-h-[calc(100vh_-_(80px_+_56px))] px-6 py-12 bg-[#7342D5] xs:min-h-0 xs:h-[calc(100vh_-_(80px_+_56px))] xs:py-0 sm:invisible sm:grow sm:pl-8 sm:pr-12 md:pr-16 lg:pl-12 lg:pr-20 xl:pl-16 xl:pr-36 2xl:pl-20 2xl:pr-56 3xl:pl-28 3xl:pr-[28rem] landscape:min-h-0 landscape:py-0">
+          <div ref={altSubsectionContainerRef} className="invisible space-y-20 sm:max-xl:space-y-24 xl:max-2xl:space-y-16">
             {/* Subsection Header */}
             <div ref={subHeaderRef} className="space-y-1">
-              <h4 className="sub-heading text-xl text-white 2xl:text-2xl">Get in touch another way</h4>
+              <h4 className="sub-heading text-xl text-white 2xl:text-2xl 3xl:text-3xl">Get in touch another way</h4>
               <p className="text-gray-200">If you wish, you can contact me using one of following methods as well.</p>
             </div>
             {/* Alternative Contact Options */}

@@ -71,20 +71,20 @@ export default function Section({ project }) {
         <div className="space-y-7">
           {/* Header */}
           <div ref={headingRef} className="space-y-2">
-            <h1 className="text-3xl font-semibold 2xl:text-4xl">{project.title}</h1>
+            <h1 className="text-3xl font-semibold 2xl:text-4xl 3xl:text-5xl">{project.title}</h1>
             <p className="text-gray-600">{project.summary}</p>
           </div>
           {/* Call-to-Action Buttons */}
-          <div ref={buttonsRef} className="flex gap-x-4 [&>button]:project-page-btn">
-            <button>
+          <div ref={buttonsRef} className="flex gap-x-3 [&>button]:project-page-btn">
+            <button className="text-white bg-[#7342D5] hover:bg-[#864DF8]">
               <Link href={project.demoLink} target="_blank" rel="noopener noreferrer">
-                <TbWorldWww />
+                <TbWorldWww className="hidden xs:block landscape:block" />
                 <p>Live Demo</p>
               </Link>
             </button>
-            <button>
+            <button className="text-[#7342D5] hover:text-white hover:bg-[#864DF8]">
               <Link href={project.codeLink} target="_blank" rel="noopener noreferrer">
-                <TbCode />
+                <TbCode className="hidden xs:block landscape:block" />
                 <p>Source Code</p>
               </Link>
             </button>
@@ -93,10 +93,10 @@ export default function Section({ project }) {
         {/* Tech Stack */}
         <div ref={techStackRef} className="space-y-7">
           <h2 className="sub-heading">Technologies Used</h2>
-          <div className="flex gap-x-10 sm:gap-x-12">
+          <div className="flex gap-x-6 xs:gap-x-8 sm:gap-x-9">
             {project.techStack.map(tech => (
               <div key={tech.name} className="flex flex-col items-center gap-y-2.5">
-                <div className="relative flex justify-center items-center w-11 h-11">
+                <div className="relative flex justify-center items-center w-10 h-10 sm:w-11 sm:h-11">
                   <Image
                     className="object-contain"
                     src={tech.logo}
@@ -105,7 +105,7 @@ export default function Section({ project }) {
                     alt={tech.name}
                   />
                 </div>
-                <p className="text-xs font-medium text-gray-600 2xl:text-sm">{tech.name}</p>
+                <p className="text-xs font-medium text-gray-600 2xl:text-sm 3xl:text-base">{tech.name}</p>
               </div>
             ))}
           </div>
