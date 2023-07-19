@@ -36,7 +36,7 @@ export default function Cover({ coverContainerRef, projectTitle, projectMockups 
   }, [isFirstCoverLoaded]);
 
   return (
-    <div ref={coverContainerRef} className="flex w-min h-[50vh] py-12 bg-neutral-100">
+    <aside ref={coverContainerRef} className="flex w-min h-[50vh] py-12 bg-neutral-100">
       {projectMockups.map((projectMockup, index) => (
         <div key={index} className="invisible relative w-screen h-full">
           <Image
@@ -50,6 +50,6 @@ export default function Cover({ coverContainerRef, projectTitle, projectMockups 
           />
         </div>
       ))}
-    </div>
+    </aside>
   );
 }

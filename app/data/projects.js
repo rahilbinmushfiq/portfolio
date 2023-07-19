@@ -9,7 +9,7 @@ export const projects = [
     ],
     title: 'Game On',
     summary: 'A responsive and interactive game review web app that allows users to browse, search, and filter video games, as well as to read and submit reviews.',
-    subsections: [
+    informativeSections: [
       {
         heading: 'Features',
         points: [
@@ -30,7 +30,7 @@ export const projects = [
           'Search for games using keywords and filters, such as platform and release date with sorting option.',
           {
             introduction: 'Visit a specific game page to learn more about the game:',
-            subPoints: [
+            subpoints: [
               'Get an overview of the game, including its summary, release date, genre, and platforms, as well as its average user and critic ratings.',
               'Read critic reviews submitted by experts, as well as submit your own review if you are an expert reviewer or connected to an online media company.',
               'Read user reviews submitted by other users, as well as submit your own review to share your personal experience on the game.',
@@ -69,7 +69,7 @@ export const projects = [
     ],
     title: 'My Portfolio',
     summary: 'A responsive portfolio web app where viewers can view my personal projects, as well as learn about me and my skills as a frontend developer.',
-    subsections: [
+    informativeSections: [
       {
         heading: 'Features',
         points: [
@@ -85,7 +85,7 @@ export const projects = [
         points: [
           {
             introduction: 'Homepage: Displays an overview of the portfolio and provides easy navigation to different sections.',
-            subPoints: [
+            subpoints: [
               'Hero section: Provides a brief introduction and captures viewers\' attention.',
               'Skills section: Highlights my technical skills, such as programming languages, frameworks, and tools I am proficient in.',
               'About section: Shares more information about my background, interests, and passion for frontend development.',
@@ -95,7 +95,7 @@ export const projects = [
           },
           {
             introduction: 'Project-details page: A dynamic page that displays the details of a project based on the URL parameter. Each project has its own unique page, accessible through the project list on the Portfolio section of homepage. It includes:',
-            subPoints: [
+            subpoints: [
               'Brief summary of the selected project.',
               'Mockup images to provide viewers with a visual representation of how the app looks on different devices.',
               'More detailed information about the project, including its features, usage, technologies used, and future development plans.',

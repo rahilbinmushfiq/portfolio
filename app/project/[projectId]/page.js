@@ -1,4 +1,4 @@
-import Section from "@/app/components/projectDetails/Section";
+import Article from "@/app/components/projectDetails/Article";
 import { projects } from "@/app/data/projects";
 
 export const dynamicParams = false;
@@ -14,7 +14,7 @@ export default function ProjectDetails({ params: { projectId } }) {
 
   return (
     <main id="project-details" className="mt-20 lg:mt-[86px]">
-      <Section project={requestedProject} />
+      <Article project={requestedProject} />
     </main>
   );
 }
