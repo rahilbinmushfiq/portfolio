@@ -192,7 +192,7 @@ export default function Header() {
   }, [pathname, router]);
 
   return (
-    <header className="fixed inset-0 -translate-y-24 invisible z-[2] flex flex-col h-20 p-6 shadow-[0_6px_36px_0_rgba(0,0,0,0.075)] sm:px-12 md:px-16 lg:h-[86px] lg:px-20 xl:px-36 2xl:px-56 3xl:px-[28rem]">
+    <header className="fixed inset-0 -translate-y-24 invisible z-[2] flex flex-col w-[100dvw] h-20 p-6 shadow-[0_6px_36px_0_rgba(0,0,0,0.075)] sm:px-12 md:px-16 lg:h-[86px] lg:px-20 xl:px-36 2xl:px-56 3xl:px-[28rem]">
       <div className="flex justify-between items-center -translate-y-3.5 invisible lg:items-center lg:font-medium">
         {/* Website Logo */}
         <div id="logo-container">

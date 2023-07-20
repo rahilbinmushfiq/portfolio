@@ -1,4 +1,4 @@
-import Article from "@/app/components/projectDetails/Article";
+import Article from "@/app/components/pages/projectDetails/Article";
 import { projects } from "@/app/data/projects";
 
 export const dynamicParams = false;
