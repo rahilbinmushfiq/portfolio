@@ -11,13 +11,13 @@ export default function Hero({ heroSectionRef, projectTitle, projectSummary, pro
       </div>
       {/* Call-to-Action Buttons */}
       <div className="flex gap-x-3 [&>button]:project-page-btn">
-        <button className="text-white bg-[#7342D5] hover:bg-[#864DF8]">
+        <button className="text-white bg-primary-base hover:bg-primary-light">
           <Link href={projectDemoLink} target="_blank" rel="noopener noreferrer">
             <TbWorldWww className="hidden xs:block landscape:block" />
             <p>Live Demo</p>
           </Link>
         </button>
-        <button className="text-[#7342D5] hover:text-white hover:bg-[#864DF8]">
+        <button className="text-primary-base hover:text-white hover:bg-primary-light">
           <Link href={projectCodeLink} target="_blank" rel="noopener noreferrer">
             <TbCode className="hidden xs:block landscape:block" />
             <p>Source Code</p>

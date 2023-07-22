@@ -1,5 +1,3 @@
-'use client';
-
 import Image from "next/image";
 import { useLayoutEffect, useState } from "react";
 import { gsap } from "gsap";
@@ -33,7 +31,7 @@ export default function Cover({ coverContainerRef, projectTitle, projectMockups 
     });
 
     return () => ctx.revert(); // Clean up the GSAP animations when the component unmounts
-  }, [isFirstCoverLoaded]);
+  }, [isFirstCoverLoaded, coverContainerRef]);
 
   return (
     <aside ref={coverContainerRef} className="flex w-min h-[50vh] py-12 bg-neutral-100">
@@ -42,7 +40,7 @@ export default function Cover({ coverContainerRef, projectTitle, projectMockups 
           <Image
             className="object-contain px-6 sm:px-12 md:px-16 lg:px-20 xl:px-0"
             src={projectMockup}
-            alt={`${projectTitle} Cover`}
+            alt={`${projectTitle} Cover - ${index === 0 ? 'Phone' : (index === 1 ? 'Tablet' : 'Desktop')} Mockup`}
             fill
             sizes="75vh"
             priority={index === 0 ? true : false}

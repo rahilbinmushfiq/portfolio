@@ -1,11 +1,11 @@
 'use client';
 
 import Cover from "./subcomponents/Cover";
-import { useLayoutEffect, useRef } from "react";
-import { gsap } from "gsap";
 import Hero from "./sections/Hero";
 import TechStack from "./sections/TechStack";
 import InformativeSection from "./sections/InformativeSection";
+import { useLayoutEffect, useRef } from "react";
+import { gsap } from "gsap";
 
 export default function Section({ project }) {
   // References of the elements needed for animation

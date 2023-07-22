@@ -24,10 +24,10 @@ export default function Form({ formRef }) {
 
     // Validate form input fields
     if (!formData.name || !formData.email || !formData.message) {
-      toast.error("Please fill up the form first.");
+      toast.error('Please fill up the form first.');
       return;
     } else if (!(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i.test(formData.email))) {
-      toast.error("Please enter a valid email address.");
+      toast.error('Please enter a valid email address.');
       return;
     }
 
@@ -58,17 +58,17 @@ export default function Form({ formRef }) {
 
       // Based on the client and server response status codes, display a success/error message
       if (clientResponse.status === 200 && serverResponse.status === 200) {
-        toast.success("Your message is received. Thank you.");
+        toast.success('Your message is received. Thank you.');
 
         // Clear the form input fields
         nameRef.current.value = '';
         emailRef.current.value = '';
         messageRef.current.value = '';
       } else {
-        toast.error("Unable to send message.");
+        toast.error('Unable to send message.');
       }
     } catch (error) {
-      toast.error("Unable to send message.");
+      toast.error('Unable to send message.');
     } finally {
       submitButtonTween.restart(); // Animate the button again after the form submission success/error
     }
@@ -89,7 +89,7 @@ export default function Form({ formRef }) {
         <textarea className="resize-none h-[20vh]" ref={messageRef} id="message" />
       </div>
       <button
-        className={`flex items-center justify-center gap-x-2 w-full overflow-hidden py-3.5 rounded-sm font-medium transition-colors duration-100 ${isProcessing ? 'cursor-not-allowed bg-[#e2d2ff] text-black hover:bg-[#e9deff]' : 'cursor-pointer bg-[#7342D5] text-white hover:bg-[#864DF8]'} lg:w-5/12 xl:gap-x-3 xl:w-[36%] xl:col-span-2 2xl:w-[30%]`}
+        className={`flex items-center justify-center gap-x-2 w-full overflow-hidden py-3.5 rounded-sm font-medium transition-colors duration-100 ${isProcessing ? 'cursor-not-allowed bg-primary-lighter text-black hover:bg-primary-lightest' : 'cursor-pointer bg-primary-base text-white hover:bg-primary-light'} lg:w-5/12 xl:gap-x-3 xl:w-[36%] xl:col-span-2 2xl:w-[30%]`}
         disabled={isProcessing} // Disable button if form submission is ongoing
       >
         <p className={isProcessing ? 'order-1' : ''}>

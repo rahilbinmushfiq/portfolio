@@ -11,9 +11,9 @@ export default function TechStack({ techStackSectionRef, projectTechStack }) {
               <Image
                 className="object-contain"
                 src={tech.logo}
+                alt={tech.name}
                 fill
                 sizes="300px"
-                alt={tech.name}
               />
             </div>
             <p className="text-xs font-medium text-gray-600 2xl:text-sm 3xl:text-base">{tech.name}</p>

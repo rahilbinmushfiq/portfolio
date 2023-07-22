@@ -17,6 +17,15 @@ module.exports = {
       fontFamily: {
         poppins: ['var(--font-poppins)', ...fontFamily.sans],
       },
+      colors: {
+        primary: {
+          lightest: '#e9deff',
+          lighter: '#e2d2ff',
+          light: '#864df8',
+          base: '#7342d5',
+          dark: '#5933a5',
+        },
+      },
     },
   },
   plugins: [],

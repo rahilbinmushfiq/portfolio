@@ -38,7 +38,9 @@ export default function Footer() {
 
   return (
     <footer ref={footerRef} className="py-5 overflow-hidden bg-neutral-100">
-      <p ref={textRef} className="invisible text-[11px] text-center text-neutral-700 xs:text-xs sm:text-sm 3xl:text-base">Copyright &copy; <span className="font-medium">Rahil Bin Mushfiq</span>. All Rights Reserved</p>
+      <p ref={textRef} className="invisible text-[11px] text-center text-neutral-700 xs:text-xs sm:text-sm 3xl:text-base">
+        Copyright &copy; <span className="font-medium">Rahil Bin Mushfiq</span>. All Rights Reserved
+      </p>
     </footer>
   );
 }

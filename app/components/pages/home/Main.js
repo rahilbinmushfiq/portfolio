@@ -57,7 +57,7 @@ export default function Main({ children }) {
           start: 'top-=86 bottom',
           end: 'bottom-=86 top',
           onToggle: (self) => self.isActive && navLinks.forEach((navLink, navIndex) => {
-            navLink.classList.toggle('text-[#864DF8]', sectionIndex === navIndex);
+            navLink.classList.toggle('text-primary-light', sectionIndex === navIndex);
           }),
         });
 
@@ -80,7 +80,7 @@ export default function Main({ children }) {
     return () => {
       document.body.style.overflow = 'visible';
       navLinks && navLinks.forEach(navLink => {
-        navLink.classList.remove('text-[#864DF8]');
+        navLink.classList.remove('text-primary-light');
       });
       mm.kill();
     };

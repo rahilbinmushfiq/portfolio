@@ -1,13 +1,13 @@
 'use client';
 
 import Link from "next/link";
-import { Leckerli_One } from "next/font/google";
-import { CgExternal } from "react-icons/cg";
 import { useEffect, useLayoutEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { Leckerli_One } from "next/font/google";
+import { CgExternal } from "react-icons/cg";
 
 const leckerliOne = Leckerli_One({
   weight: '400',
@@ -230,7 +230,7 @@ export default function Header() {
         <div className="hidden lg:block">
           {/* External Link for Resume */}
           <Link
-            className="flex items-center gap-x-1.5 px-5 py-2.5 rounded-sm text-white border border-[#864DF8] bg-[#864DF8] transition-colors duration-500 ease-out hover:text-[#864DF8] hover:bg-transparent"
+            className="flex items-center gap-x-1.5 px-5 py-2.5 rounded-sm text-white border border-primary-light bg-primary-light transition-colors duration-500 ease-out hover:text-primary-light hover:bg-transparent"
             href="https://www.google.com/"
             target="_blank"
             rel="noopener noreferrer"

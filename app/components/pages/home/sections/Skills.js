@@ -1,6 +1,6 @@
 'use client';
 
-import thoughtProcessImage from "@/public/thoughtProcess.svg";
+import developerThoughtProcessImage from "@/public/developerThoughtProcess.svg";
 import { techStack } from "@/app/data/techStack";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,8 +11,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 export default function Skills() {
   // References of the elements needed for animation
   const sectionRef = useRef(null),
-    sectionContainerRef = useRef(null),
-    sectionHeaderRef = useRef(null),
+    innerContainerRef = useRef(null),
+    headerRef = useRef(null),
     imageRef = useRef(null),
     techStackRef = useRef(null);
 
@@ -25,9 +25,9 @@ export default function Skills() {
       isMobileScreenTooSmall = isMobileScreen && isScreenTooSmall,
       // Get the elements needed for animation from their references
       sectionElement = sectionRef.current,
-      sectionContainerElement = sectionContainerRef.current,
-      sectionHeaderElements = sectionHeaderRef.current.children,
-      headingUnderlineElement = sectionHeaderRef.current.firstChild.firstChild,
+      innerContainerElement = innerContainerRef.current,
+      headerElements = headerRef.current.children,
+      headingUnderlineElement = headerRef.current.firstChild.firstChild,
       imageElement = imageRef.current,
       techElements = [...techStackRef.current.children];
 
@@ -45,8 +45,8 @@ export default function Skills() {
       });
 
       // The on-scroll reveal animation in timeline
-      tl.from(sectionContainerElement, {})
-        .from(sectionHeaderElements, { y: 25, stagger: { amount: 0.2 } }, '<')
+      tl.set(innerContainerElement, { autoAlpha: 1 })
+        .from(headerElements, { y: 25, stagger: { amount: 0.2 } })
         .from(imageElement, { y: 50 }, '<')
         .from(techElements, { y: 35, stagger: { amount: 0.5 } }, '<')
         .from(headingUnderlineElement, { transformOrigin: 'center left', scaleX: 0 }, '<0.35');
@@ -56,15 +56,15 @@ export default function Skills() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="skills" className="home-section py-12 min-h-[calc(100vh_-_80px)] xs:min-h-0 xs:h-[calc(100vh_-_80px)] xs:py-0 bg-neutral-100 lg:h-[calc(100vh_-_86px)] landscape:min-h-0 landscape:py-0">
-      <div ref={sectionContainerRef} className="invisible w-full h-full px-6 sm:px-12 md:px-16 lg:px-20 xl:flex xl:pl-6 xl:pr-36 2xl:pr-56 3xl:pr-[28rem]">
+    <section ref={sectionRef} id="skills" className="home-section min-h-[calc(100vh_-_80px)] py-12 xs:min-h-0 xs:h-[calc(100vh_-_80px)] xs:py-0 bg-neutral-100 lg:h-[calc(100vh_-_86px)] landscape:min-h-0 landscape:py-0">
+      <div ref={innerContainerRef} className="invisible w-full h-full px-6 sm:px-12 md:px-16 lg:px-20 xl:flex xl:pl-6 xl:pr-36 2xl:pr-56 3xl:pr-[28rem]">
         {/* Section Image */}
         <div ref={imageRef} className="hidden xl:flex xl:justify-center xl:items-center xl:grow xl:pr-14 2xl:pr-24 3xl:pr-32">
-          <Image className="w-full h-auto" src={thoughtProcessImage} alt="Thought Process" priority />
+          <Image className="w-full h-auto" src={developerThoughtProcessImage} alt="thought process of a developer" />
         </div>
         <div className="flex flex-col justify-center gap-y-12 h-full xl:basis-4/5 xl:gap-y-10 2xl:basis-[45%] 2xl:gap-y-14 3xl:basis-2/5 3xl:gap-y-20">
           {/* Section Header */}
-          <div ref={sectionHeaderRef} className="section-header">
+          <div ref={headerRef} className="section-header">
             <h3><span />Skills</h3>
             <p>My attention to detail in design and code results in pixel-perfect websites with beautiful, responsive, and functional interfaces that delight users.</p>
           </div>
@@ -82,9 +82,9 @@ export default function Skills() {
                   <Image
                     className="object-contain"
                     src={techLogo}
+                    alt={techName}
                     fill
                     sizes="300px"
-                    alt={techName}
                   />
                 </div>
                 <p className="text-xs font-medium text-gray-600 2xl:text-sm 3xl:text-base">{techName}</p>

@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function ContactForm() {
   // References of the elements needed for animation
-  const formSubsectionRef = useRef(null),
+  const subsectionRef = useRef(null),
     headerRef = useRef(null),
     formRef = useRef(null);
 
@@ -19,17 +19,17 @@ export default function ContactForm() {
       isMobile = window.screen.width < 640,
       axis = isMobile ? 'y' : 'x',
       // Get the elements needed for animation from their references
-      formSubsectionElement = formSubsectionRef.current,
-      headingElements = headerRef.current.children,
+      subsectionElement = subsectionRef.current,
+      headerElements = headerRef.current.children,
       headingUnderlineElement = headerRef.current.firstChild.firstChild,
       formElements = formRef.current.children;
 
     const ctx = gsap.context(() => {
-      // Initialize the timeline for on-scroll reveal animation (when the form subsection comes into view)
+      // Initialize the timeline for on-scroll reveal animation (when the subsection comes into view)
       const tl = gsap.timeline({
         delay: 0.5,
         scrollTrigger: {
-          trigger: isMobileScreenTooSmall ? '#home' : formSubsectionElement,
+          trigger: isMobileScreenTooSmall ? '#home' : subsectionElement,
           start: `top-=${headerOffsetHeight} bottom`,
           end: `bottom-=${headerOffsetHeight} top`,
           toggleActions: 'restart reset restart reset',
@@ -37,9 +37,9 @@ export default function ContactForm() {
         defaults: { autoAlpha: 0, duration: 0.5, ease: 'power1.out' },
       });
 
-      // The on-scroll reveal animation of form subsection in timeline
-      tl.set(formSubsectionElement, { autoAlpha: 1 })
-        .from(headingElements, { [axis]: 25, stagger: { amount: 0.2 }, delay: isMobile ? 0 : 0.35 })
+      // The on-scroll reveal animation of subsection in timeline
+      tl.set(subsectionElement, { autoAlpha: 1 })
+        .from(headerElements, { [axis]: 25, stagger: { amount: 0.2 }, delay: isMobile ? 0 : 0.35 })
         .from(formElements, { [axis]: 50, stagger: { amount: 0.5 } }, '<')
         .from(headingUnderlineElement, { transformOrigin: 'center left', scaleX: 0 }, '<0.35');
     });
@@ -48,7 +48,7 @@ export default function ContactForm() {
   }, []);
 
   return (
-    <div ref={formSubsectionRef} className="home-section flex items-center min-h-[calc(100vh_-_80px)] px-6 py-12 xs:invisible xs:py-0 xs:min-h-0 xs:h-[calc(100vh_-_80px)] sm:basis-1/2 sm:pl-12 sm:pr-8 md:pl-16 lg:pl-20 lg:pr-12 xl:pl-36 xl:pr-16 xl:max-2xl:basis-[55%] 2xl:pl-56 2xl:pr-20 3xl:pl-[28rem] 3xl:pr-28 landscape:invisible landscape:min-h-0 landscape:py-0">
+    <div ref={subsectionRef} className="home-section flex items-center min-h-[calc(100vh_-_80px)] px-6 py-12 xs:invisible xs:min-h-0 xs:h-[calc(100vh_-_80px)] xs:py-0 sm:basis-1/2 sm:pl-12 sm:pr-8 md:pl-16 lg:pl-20 lg:pr-12 xl:pl-36 xl:pr-16 xl:max-2xl:basis-[55%] 2xl:pl-56 2xl:pr-20 3xl:pl-[28rem] 3xl:pr-28 landscape:invisible landscape:min-h-0 landscape:py-0">
       <div className="space-y-14 sm:space-y-20 xl:space-y-14 2xl:space-y-16 3xl:space-y-20">
         {/* Section Header */}
         <div ref={headerRef} className="section-header">

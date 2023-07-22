@@ -1,9 +1,9 @@
+import Project from "./subcomponents/Project";
 import { projects } from "@/app/data/projects";
 import { useState, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import Project from "./subcomponents/Project";
 
 export default function Carousel({ carouselRef, chevronLeftRef, projectRef, chevronRightRef }) {
   const firstProjectId = 0;
@@ -43,7 +43,7 @@ export default function Carousel({ carouselRef, chevronLeftRef, projectRef, chev
     });
 
     return () => observer.kill();
-  }, [activeProjectId, lastProjectId]);
+  }, [activeProjectId, lastProjectId, projectRef]);
 
   // Function that slides to the previous project on the project carousel
   const slideToPrevProject = () => {
@@ -68,7 +68,7 @@ export default function Carousel({ carouselRef, chevronLeftRef, projectRef, chev
   };
 
   return (
-    <div ref={carouselRef} className="invisible relative pt-8 pb-12 grow flex justify-center overflow-hidden shadow-[0_-6px_36px_0_rgba(0,0,0,0.2)] bg-neutral-100 xs:py-0 landscape:py-0">
+    <div ref={carouselRef} className="invisible relative grow flex justify-center pt-8 pb-12 overflow-hidden shadow-[0_-6px_36px_0_rgba(0,0,0,0.2)] bg-neutral-100 xs:py-0 landscape:py-0">
       {/* Left Chevron */}
       <div ref={chevronLeftRef} className="portfolio-chevron-wrapper left-0">
         <FaChevronLeft
