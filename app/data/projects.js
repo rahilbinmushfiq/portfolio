@@ -7,6 +7,7 @@ export const projects = [
       '/mockups/gameOn/iPadPro.webp',
       '/mockups/gameOn/iMacPro.webp',
     ],
+    openGraphImage: 'https://www.dropbox.com/scl/fi/rskt7ad29o5oqicch02xw/gameon.png?rlkey=au7cmjd6b3ke5xdxhd3tx063x&raw=1',
     title: 'Game On',
     summary: 'A responsive and interactive game review web app that allows users to browse, search, and filter video games, as well as to read and submit reviews.',
     informativeSections: [
@@ -67,14 +68,15 @@ export const projects = [
       '/mockups/portfolio/iPadPro.webp',
       '/mockups/portfolio/iMacPro.webp',
     ],
+    openGraphImage: 'https://www.dropbox.com/scl/fi/5emmjflw1saehvsjqiimj/portfolio.png?rlkey=pmopp1dt3w7rfld2qp9utfyqx&raw=1',
     title: 'My Portfolio',
     summary: 'A responsive portfolio web app where viewers can view my personal projects, as well as learn about me and my skills as a frontend developer.',
     informativeSections: [
       {
         heading: 'Features',
         points: [
-          'Dynamic and interactive user interface using React',
-          'Fast, optimized, and SEO-friendly web application built with React Server Components and Next.js',
+          'Dynamic and interactive user interface using React and its reusable components',
+          'Optimized with Next.js to develop a fast and SEO-friendly web application',
           'Responsive and modern UI design using Tailwind CSS',
           'Smooth animations and transitions using GSAP (GreenSock Animation Platform)',
         ],
@@ -99,7 +101,6 @@ export const projects = [
               'Brief summary of the selected project.',
               'Mockup images to provide viewers with a visual representation of how the app looks on different devices.',
               'More detailed information about the project, including its features, usage, technologies used, and future development plans.',
-              'Screenshots or demo videos showcasing the project in action.',
               'Links to the project\'s live demo and source code.',
             ],
           },
@@ -121,7 +122,7 @@ export const projects = [
       { name: 'Tailwind', logo: '/tech/tailwind.png', },
       { name: 'GSAP', logo: '/tech/gsap.png', },
     ],
-    demoLink: 'https://portfolio-rahilbinmushfiq.vercel.app/',
+    demoLink: 'https://rahilbinmushfiq.vercel.app/',
     codeLink: 'https://github.com/rahilbinmushfiq/portfolio',
   },
 ];
