@@ -56,7 +56,7 @@ export default function Skills() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="skills" className="home-section min-h-[calc(100vh_-_80px)] py-12 xs:min-h-0 xs:h-[calc(100vh_-_80px)] xs:py-0 bg-neutral-100 lg:h-[calc(100vh_-_86px)] landscape:min-h-0 landscape:py-0">
+    <section ref={sectionRef} id="skills" className="home-section min-h-[calc(100dvh_-_80px)] py-12 xs:min-h-0 xs:h-[calc(100dvh_-_80px)] xs:py-0 bg-neutral-100 lg:h-[calc(100dvh_-_86px)] landscape:min-h-0 landscape:py-0">
       <div ref={innerContainerRef} className="invisible w-full h-full px-6 sm:px-12 md:px-16 lg:px-20 xl:flex xl:pl-6 xl:pr-36 2xl:pr-56 3xl:pr-[28rem]">
         {/* Section Image */}
         <div ref={imageRef} className="hidden xl:flex xl:justify-center xl:items-center xl:grow xl:pr-14 2xl:pr-24 3xl:pr-32">

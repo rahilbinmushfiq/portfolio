@@ -69,7 +69,7 @@ export default function Portfolio() {
   }, []);
 
   return (
-    <section id="portfolio" ref={sectionRef} className="home-section flex flex-col min-h-[calc(100vh_-_80px)] pt-12 bg-neutral-100 xs:min-h-0 xs:h-[calc(100vh_-_80px)] xs:pt-0 lg:h-[calc(100vh_-_86px)] landscape:min-h-0 landscape:pt-0">
+    <section id="portfolio" ref={sectionRef} className="home-section flex flex-col min-h-[calc(100dvh_-_80px)] pt-12 bg-neutral-100 xs:min-h-0 xs:h-[calc(100dvh_-_80px)] xs:pt-0 lg:h-[calc(100dvh_-_86px)] landscape:min-h-0 landscape:pt-0">
       {/* Section Header */}
       <div ref={headerRef} className="section-header invisible px-6 pb-8 xs:pt-8 sm:px-12 md:px-16 sm:py-14 lg:px-20 lg:max-xl:py-20 xl:px-36 2xl:px-56 2xl:py-20 3xl:px-[28rem] 3xl:py-28">
         <h3><span />Portfolio</h3>

@@ -90,7 +90,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" ref={sectionRef} className="home-section invisible flex flex-col justify-center min-h-[98vh] pt-12 mt-[80px] xs:min-h-0 xs:h-[calc(100vh_-_80px)] xs:pt-0 lg:mt-[86px] lg:h-[calc(100vh_-_86px)] landscape:min-h-0 landscape:pt-0">
+    <section id="hero" ref={sectionRef} className="home-section invisible flex flex-col justify-center min-h-[98vh] pt-12 mt-[80px] xs:min-h-0 xs:h-[calc(100dvh_-_80px)] xs:pt-0 lg:mt-[86px] lg:h-[calc(100dvh_-_86px)] landscape:min-h-0 landscape:pt-0">
       <div className="grow flex flex-col gap-y-4 xl:flex-row xl:gap-y-0">
         <div className="grow flex flex-col justify-center gap-y-8 px-6 xs:gap-y-12 sm:max-h-[25rem] sm:px-12 md:px-16 lg:max-h-[30rem] lg:px-20 xl:grow-0 xl:basis-[40%] xl:gap-y-16 xl:max-h-none xl:pr-0 xl:pl-36 2xl:basis-[38%] 2xl:gap-y-20 2xl:pl-56 3xl:pl-[28rem]">
           {/* Hero Section Header */}

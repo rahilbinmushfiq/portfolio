@@ -48,7 +48,7 @@ export default function ContactForm() {
   }, []);
 
   return (
-    <div ref={subsectionRef} className="home-section flex items-center min-h-[calc(100vh_-_80px)] px-6 py-12 xs:invisible xs:min-h-0 xs:h-[calc(100vh_-_80px)] xs:py-0 sm:basis-1/2 sm:pl-12 sm:pr-8 md:pl-16 lg:pl-20 lg:pr-12 xl:pl-36 xl:pr-16 xl:max-2xl:basis-[55%] 2xl:pl-56 2xl:pr-20 3xl:pl-[28rem] 3xl:pr-28 landscape:invisible landscape:min-h-0 landscape:py-0">
+    <div ref={subsectionRef} className="home-section flex items-center min-h-[calc(100dvh_-_80px)] px-6 py-12 xs:invisible xs:min-h-0 xs:h-[calc(100dvh_-_80px)] xs:py-0 sm:basis-1/2 sm:pl-12 sm:pr-8 md:pl-16 lg:pl-20 lg:pr-12 xl:pl-36 xl:pr-16 xl:max-2xl:basis-[55%] 2xl:pl-56 2xl:pr-20 3xl:pl-[28rem] 3xl:pr-28 landscape:invisible landscape:min-h-0 landscape:py-0">
       <div className="space-y-14 sm:space-y-20 xl:space-y-14 2xl:space-y-16 3xl:space-y-20">
         {/* Section Header */}
         <div ref={headerRef} className="section-header">

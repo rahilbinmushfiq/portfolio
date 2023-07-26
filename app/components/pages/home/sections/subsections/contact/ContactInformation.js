@@ -57,7 +57,7 @@ export default function ContactInformation() {
   }, []);
 
   return (
-    <div ref={subsectionRef} className="home-section flex items-center min-h-[calc(100vh_-_(80px_+_56px))] px-6 py-12 bg-primary-base xs:min-h-0 xs:h-[calc(100vh_-_(80px_+_56px))] xs:py-0 sm:invisible sm:grow sm:pl-8 sm:pr-12 md:pr-16 lg:pl-12 lg:pr-20 xl:pl-16 xl:pr-36 2xl:pl-20 2xl:pr-56 3xl:pl-28 3xl:pr-[28rem] landscape:min-h-0 landscape:py-0">
+    <div ref={subsectionRef} className="home-section flex items-center min-h-[calc(100dvh_-_(80px_+_56px))] px-6 py-12 bg-primary-base xs:min-h-0 xs:h-[calc(100dvh_-_(80px_+_56px))] xs:py-0 sm:invisible sm:grow sm:pl-8 sm:pr-12 md:pr-16 lg:pl-12 lg:pr-20 xl:pl-16 xl:pr-36 2xl:pl-20 2xl:pr-56 3xl:pl-28 3xl:pr-[28rem] landscape:min-h-0 landscape:py-0">
       <div ref={innerContainerRef} className="invisible space-y-20 sm:max-xl:space-y-24 xl:max-2xl:space-y-16">
         {/* Subsection Header */}
         <div ref={subHeaderRef} className="space-y-1">

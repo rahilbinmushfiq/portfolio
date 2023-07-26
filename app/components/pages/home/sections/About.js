@@ -52,7 +52,7 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="home-section invisible flex flex-col justify-center items-center gap-y-4 min-h-[calc(100vh_-_80px)] px-6 py-12 xs:min-h-0 xs:h-[calc(100vh_-_80px)] xs:py-0 sm:gap-y-12 sm:px-12 md:px-16 lg:gap-y-24 lg:h-[calc(100vh_-_86px)] lg:px-20 xl:flex-row xl:gap-y-0 xl:pr-0 xl:pl-36 2xl:pl-56 2xl:gap-x-12 3xl:pl-[28rem] 3xl:gap-x-20 landscape:min-h-0 landscape:py-0">
+    <section id="about" ref={sectionRef} className="home-section invisible flex flex-col justify-center items-center gap-y-4 min-h-[calc(100dvh_-_80px)] px-6 py-12 xs:min-h-0 xs:h-[calc(100dvh_-_80px)] xs:py-0 sm:gap-y-12 sm:px-12 md:px-16 lg:gap-y-24 lg:h-[calc(100dvh_-_86px)] lg:px-20 xl:flex-row xl:gap-y-0 xl:pr-0 xl:pl-36 2xl:pl-56 2xl:gap-x-12 3xl:pl-[28rem] 3xl:gap-x-20 landscape:min-h-0 landscape:py-0">
       {/* Desktop Section Image */}
       <Image
         ref={desktopImageRef}

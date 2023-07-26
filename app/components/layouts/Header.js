@@ -18,14 +18,24 @@ export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
   const [navigationSectionId, setNavigationSectionId] = useState(null);  // State hook for updating the id for the next section to be navigated
+  const [wasLandscape, setWasLandscape] = useState(false); // State hook to track whether the screen orientation was changed to landscape previously
 
-  // Reload the browser on window-resize to prevent the unexpected scroll-behavior in some browser
+  /* Reload the browser if window screen oriented from landscape to portrait
+     to prevent the unexpected scroll-behavior in some browser
+  */
   useEffect(() => {
-    const handleResize = () => location.reload();
+    const handleResize = () => {
+      if (window.screen.width < window.screen.height) {
+        wasLandscape && location.reload();
+      } else {
+        !wasLandscape && setWasLandscape(true);
+      }
+    };
+
     window.addEventListener('resize', handleResize);
 
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, [wasLandscape]);
 
   // Animate the header when the component mounts
   useLayoutEffect(() => {
