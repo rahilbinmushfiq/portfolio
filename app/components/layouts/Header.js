@@ -167,7 +167,7 @@ export default function Header() {
         navLinks = gsap.utils.toArray('#desktop-nav ul li a');
       } else {
         navButton = document.querySelector('#mobile-nav-button');
-        navLinks = gsap.utils.toArray('#mobile-nav ul li a');
+        navLinks = gsap.utils.toArray("#mobile-nav ul li a[href^='/#']");
       }
 
       // Listen for click events on the logo, navigation button (if smaller screen), and navigation links
@@ -231,7 +231,7 @@ export default function Header() {
           {/* External Link for Resume */}
           <Link
             className="flex items-center gap-x-1.5 px-5 py-2.5 rounded-sm text-white border border-primary-light bg-primary-light transition-colors duration-500 ease-out hover:text-primary-light hover:bg-transparent"
-            href="https://www.google.com/"
+            href="/resume_rahilbinmushfiq.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -263,7 +263,7 @@ export default function Header() {
               {/* External Link for Resume */}
               <Link
                 className="flex justify-center items-center gap-x-2 w-fit px-6 py-3 rounded-sm border border-white sm:px-8 sm:py-4"
-                href="https://www.google.com/"
+                href="/resume_rahilbinmushfiq.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
