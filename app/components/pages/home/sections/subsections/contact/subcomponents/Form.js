@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { gsap } from "gsap";
 import { toast } from "react-toastify";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { FaPaperPlane } from "react-icons/fa";
