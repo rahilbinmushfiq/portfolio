@@ -9,6 +9,12 @@ const poppins = Poppins({
   variable: '--font-poppins',
 });
 
+export const metadata = {
+  verification: {
+    google: '_mAkXJajzZaw1HNrI7oF9UvU8nIQWQMBt37M8XEF1QU',
+  },
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
