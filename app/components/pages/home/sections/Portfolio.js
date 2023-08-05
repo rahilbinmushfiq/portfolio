@@ -37,8 +37,8 @@ export default function Portfolio() {
         delay: 0.5,
         scrollTrigger: {
           trigger: isMobileScreenTooSmall ? '#home' : sectionElement,
-          start: `top-=${headerOffsetHeight} bottom`,
-          end: `bottom-=${headerOffsetHeight} top`,
+          start: `top-=${headerOffsetHeight} center`,
+          end: `bottom-=${headerOffsetHeight} center`,
           toggleActions: 'restart reset restart reset',
         },
         defaults: { autoAlpha: 0, duration: 0.5, ease: 'power1.out' }
@@ -71,7 +71,7 @@ export default function Portfolio() {
   return (
     <section id="portfolio" ref={sectionRef} className="home-section flex flex-col min-h-[calc(100dvh_-_80px)] pt-12 bg-neutral-100 xs:min-h-0 xs:h-[calc(100dvh_-_80px)] xs:pt-0 lg:h-[calc(100dvh_-_86px)] landscape:min-h-0 landscape:pt-0">
       {/* Section Header */}
-      <div ref={headerRef} className="section-header invisible px-6 pb-8 xs:pt-8 sm:px-12 md:px-16 sm:py-14 lg:px-20 lg:max-xl:py-20 xl:px-36 2xl:px-56 2xl:py-20 3xl:px-[28rem] 3xl:py-28">
+      <div ref={headerRef} className="section-header invisible px-6 pb-8 xs:pt-8 sm:px-12 md:px-16 sm:py-14 lg:px-20 lg:py-20 xl:px-36 xl:py-14 2xl:px-56 2xl:py-20 3xl:px-[28rem] 3xl:py-28 dpr-lg:py-16 dpr-xl:py-11">
         <h3><span />Portfolio</h3>
         <p>In this section, you can view my featured projects. Swipe left or right to view other projects.</p>
       </div>

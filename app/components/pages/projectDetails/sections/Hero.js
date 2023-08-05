@@ -6,7 +6,7 @@ export default function Hero({ heroSectionRef, projectTitle, projectSummary, pro
     <section ref={heroSectionRef} className="space-y-7">
       {/* Header */}
       <div className="space-y-2">
-        <h1 className="text-3xl font-semibold 2xl:text-4xl 3xl:text-5xl">{projectTitle}</h1>
+        <h1 className="text-3xl font-semibold 2xl:text-4xl 3xl:text-5xl dpr-lg:text-2xl">{projectTitle}</h1>
         <p className="text-gray-600">{projectSummary}</p>
       </div>
       {/* Call-to-Action Buttons */}

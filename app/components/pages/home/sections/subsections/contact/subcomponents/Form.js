@@ -76,7 +76,7 @@ export default function Form({ formRef }) {
   };
 
   return (
-    <form ref={formRef} className="space-y-7 [&>div]:form-field-wrapper sm:space-y-9 xl:grid xl:grid-cols-2 xl:gap-8 xl:space-y-0 2xl:gap-10 3xl:gap-12" onSubmit={handleFormSubmission}>
+    <form ref={formRef} className="space-y-7 [&>div]:form-field-wrapper sm:space-y-9 xl:grid xl:grid-cols-2 xl:gap-6 xl:space-y-0 2xl:gap-10 3xl:gap-12 dpr-lg:gap-8 dpr-xl:gap-5" onSubmit={handleFormSubmission}>
       <div className="xl:col-span-1">
         <label htmlFor="name">Name</label>
         <input ref={nameRef} type="text" id="name" autoComplete="off" />

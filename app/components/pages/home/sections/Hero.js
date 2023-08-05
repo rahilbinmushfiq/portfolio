@@ -44,8 +44,8 @@ export default function Hero() {
         delay: 0.5,
         scrollTrigger: {
           trigger: isMobileScreenTooSmall ? '#home' : sectionElement,
-          start: `top-=${headerOffsetHeight} bottom`,
-          end: `bottom-=${headerOffsetHeight} top`,
+          start: `top-=${headerOffsetHeight} center`,
+          end: `bottom-=${headerOffsetHeight} center`,
           toggleActions: 'restart reset restart reset',
         },
         defaults: { autoAlpha: 0, duration: 0.5, ease: 'power1.out' },
@@ -92,13 +92,13 @@ export default function Hero() {
   return (
     <section id="hero" ref={sectionRef} className="home-section invisible flex flex-col justify-center min-h-[98vh] pt-12 mt-[80px] xs:min-h-0 xs:h-[calc(100dvh_-_80px)] xs:pt-0 lg:mt-[86px] lg:h-[calc(100dvh_-_86px)] landscape:min-h-0 landscape:pt-0">
       <div className="grow flex flex-col gap-y-4 xl:flex-row xl:gap-y-0">
-        <div className="grow flex flex-col justify-center gap-y-8 px-6 xs:gap-y-12 sm:max-h-[25rem] sm:px-12 md:px-16 lg:max-h-[30rem] lg:px-20 xl:grow-0 xl:basis-[40%] xl:gap-y-16 xl:max-h-none xl:pr-0 xl:pl-36 2xl:basis-[38%] 2xl:gap-y-20 2xl:pl-56 3xl:pl-[28rem]">
+        <div className="grow flex flex-col justify-center gap-y-8 px-6 xs:gap-y-12 sm:max-h-[25rem] sm:px-12 md:px-16 lg:max-h-[30rem] lg:px-20 xl:grow-0 xl:basis-[45%] xl:gap-y-16 xl:max-h-none xl:pr-0 xl:pl-36 2xl:basis-[38%] 2xl:gap-y-20 2xl:pl-56 3xl:pl-[28rem]">
           {/* Hero Section Header */}
           <div ref={textRefs} className="space-y-3 lg:space-y-5 xl:space-y-7">
-            <h2 className="-mb-2 text-sm font-medium xs:text-base sm:max-xl:text-xl xl:-mb-4 xl:font-medium xl:text-lg 3xl:text-xl">
+            <h2 className="-mb-2 text-sm font-medium xs:text-base sm:text-xl xl:-mb-4 xl:font-medium xl:text-lg 3xl:text-xl dpr-lg:text-base">
               Hi, I&apos;m <span className="text-primary-base">Rahil Bin Mushfiq</span>.
             </h2>
-            <h1 className="font-semibold text-5xl/[1.15] xs:text-[3.5rem]/[1.15] lg:text-7xl/[1.15] xl:text-6xl/[1.15] 2xl:text-[5.5rem]/[1.15] 3xl:text-8xl/[1.2]">
+            <h1 className="font-semibold text-5xl/[1.15] xs:text-[3.5rem]/[1.15] lg:text-7xl/[1.15] xl:text-6xl/[1.15] 2xl:text-[5.5rem]/[1.15] 3xl:text-8xl/[1.2] dpr-lg:text-6xl/[1.15] dpr-xl:text-[3.5rem]/[1.15]">
               Frontend Developer.
             </h1>
             <p className="text-gray-600">
@@ -106,7 +106,7 @@ export default function Hero() {
             </p>
           </div>
           {/* Hero Section Buttons */}
-          <div ref={buttonRefs} className="flex gap-x-4 [&>button]:hero-button xl:gap-x-6">
+          <div ref={buttonRefs} className="flex gap-x-4 [&>button]:hero-button dpr-lg:gap-x-3">
             <button className="bg-primary-base text-white hover:bg-primary-light">
               <Link href="/#portfolio" onClick={handleHeroButtonClick}>
                 See my work
@@ -120,7 +120,7 @@ export default function Hero() {
           </div>
         </div>
         {/* Hero Section Image */}
-        <div ref={imageRef} className="flex justify-center items-center px-6 py-12 xs:py-0 sm:px-12 md:px-16 xl:grow xl:pr-0 xl:pl-16 2xl:px-24 3xl:pr-12 3xl:pl-32 landscape:py-0">
+        <div ref={imageRef} className="flex justify-center items-center px-6 py-12 xs:py-0 sm:px-12 md:px-16 xl:grow xl:px-20 2xl:px-24 3xl:pr-12 3xl:pl-32 landscape:py-0">
           <Image className="w-full h-auto" src={developerCodingImage} alt="developer coding" priority />
         </div>
       </div>

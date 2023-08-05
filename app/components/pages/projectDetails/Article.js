@@ -66,7 +66,7 @@ export default function Section({ project }) {
         projectMockups={project.mockups}
       />
       {/* Project Details */}
-      <div className="space-y-14 py-8 px-6 sm:px-12 sm:py-10 md:px-16 lg:py-14 lg:px-20 xl:px-64 2xl:px-0 2xl:max-w-[60rem] 2xl:mx-auto">
+      <div className="space-y-14 py-8 px-6 sm:px-12 sm:py-10 md:px-16 lg:py-14 lg:px-20 xl:px-64 2xl:px-0 2xl:max-w-[60rem] dpr-lg:max-w-[45rem] dpr-xl:max-w-[70rem] landscape:mx-auto">
         {/* Hero Section */}
         <Hero
           heroSectionRef={heroSectionRef}

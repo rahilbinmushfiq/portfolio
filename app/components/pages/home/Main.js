@@ -54,8 +54,8 @@ export default function Main({ children }) {
         */
         isLargerScreen && ScrollTrigger.create({
           trigger: section,
-          start: 'top-=86 bottom',
-          end: 'bottom-=86 top',
+          start: 'top-=86 center',
+          end: 'bottom-=86 center',
           onToggle: (self) => self.isActive && navLinks.forEach((navLink, navIndex) => {
             navLink.classList.toggle('text-primary-light', sectionIndex === navIndex);
           }),

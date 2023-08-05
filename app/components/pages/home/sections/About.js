@@ -34,8 +34,8 @@ export default function About() {
         delay: 0.5,
         scrollTrigger: {
           trigger: isMobileScreenTooSmall ? '#home' : sectionElement,
-          start: `top-=${headerOffsetHeight} bottom`,
-          end: `bottom-=${headerOffsetHeight} top`,
+          start: `top-=${headerOffsetHeight} center`,
+          end: `bottom-=${headerOffsetHeight} center`,
           toggleActions: 'restart reset restart reset',
         },
         defaults: { autoAlpha: 0, duration: 0.5, ease: 'power1.out' },

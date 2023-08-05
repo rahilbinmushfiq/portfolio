@@ -48,8 +48,8 @@ export default function ContactForm() {
   }, []);
 
   return (
-    <div ref={subsectionRef} className="home-section flex items-center min-h-[calc(100dvh_-_80px)] px-6 py-12 xs:invisible xs:min-h-0 xs:h-[calc(100dvh_-_80px)] xs:py-0 sm:basis-1/2 sm:pl-12 sm:pr-8 md:pl-16 lg:pl-20 lg:pr-12 xl:pl-36 xl:pr-16 xl:max-2xl:basis-[55%] 2xl:pl-56 2xl:pr-20 3xl:pl-[28rem] 3xl:pr-28 landscape:invisible landscape:min-h-0 landscape:py-0">
-      <div className="space-y-14 sm:space-y-20 xl:space-y-14 2xl:space-y-16 3xl:space-y-20">
+    <div ref={subsectionRef} className="home-section flex items-center min-h-[calc(100dvh_-_80px)] px-6 py-12 xs:invisible xs:min-h-0 xs:h-[calc(100dvh_-_80px)] xs:py-0 sm:basis-1/2 sm:pl-12 sm:pr-8 md:pl-16 lg:pl-20 lg:pr-12 xl:basis-[55%] xl:pl-36 xl:pr-16 2xl:basis-1/2 2xl:pl-56 2xl:pr-20 3xl:pl-[28rem] 3xl:pr-28 dpr-lg:basis-[55%] dpr-lg:pr-16 dpr-xl:basis-1/2 dpr-xl:pr-12 landscape:invisible landscape:min-h-0 landscape:py-0">
+      <div className="space-y-14 sm:space-y-20 xl:space-y-6 2xl:space-y-16 3xl:space-y-20 dpr-lg:space-y-10 dpr-xl:space-y-6">
         {/* Section Header */}
         <div ref={headerRef} className="section-header">
           <h3><span />Contact</h3>

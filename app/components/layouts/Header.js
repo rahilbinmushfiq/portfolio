@@ -245,7 +245,7 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <p className="text-xs/none 2xl:text-sm/none">Resume</p>
+            <p className="text-xs/none 2xl:text-sm/none dpr-lg:text-xs/none">Resume</p>
             <CgExternal size={16} />
           </Link>
         </div>
