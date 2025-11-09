@@ -1,13 +1,79 @@
 export const projects = [
   {
     id: 0,
+    mockupAllDevices: '/mockups/poshax/allDevices.webp',
+    mockups: [
+      '/mockups/poshax/iPhone12Pro.webp',
+      '/mockups/poshax/iPadPro.webp',
+      '/mockups/poshax/iMacPro.webp',
+    ],
+    openGraphImage: 'https://rahilbinmushfiq.vercel.app/_next/image?url=%2Fmockups%2Fposhax%2FallDevices.webp&w=1920&q=75',
+    title: 'PoshaX',
+    summary:
+      'A full-stack fashion e-commerce platform offering a smooth shopping experience for customers and powerful management tools for staff members.',
+    informativeSections: [
+      {
+        heading: 'Features',
+        points: [
+          'Full-featured e-commerce system with customer-facing and staff-side interfaces',
+          'Authentication using NextAuth.js (credentials and Google sign-in)',
+          'Dynamic product catalog with filtering, search, and sorting options',
+          'Shopping cart, checkout flow, and order management system',
+          'PDF generation for invoices and policies using @react-pdf/renderer',
+          'Interactive and responsive design powered by Tailwind CSS and NextUI',
+          'Smooth animations and micro-interactions using GSAP and Lottie',
+          'Backend powered by Node.js, Express.js, and MongoDB for scalable data handling',
+          'Staff dashboard for managing products, orders, customers, analytics, and finances workflows',
+          'Secure backend with JWT protection, rate limiting, and OTP-based staff authentication',
+          'Deployed and managed via Google Cloud Run for scalable performance and reliability',
+        ],
+      },
+      {
+        heading: 'Usage',
+        description:
+          'PoshaX provides an engaging storefront for customers and a secure management dashboard for staff members:',
+        points: [
+          {
+            introduction: 'Customer-side:',
+            subpoints: [
+              'Browse collections, filter and sort products by category, trend, or product attributes.',
+              'Add items to wishlist and cart, proceed through checkout, and download invoices as PDFs.',
+              'Sign in using Google or email/password, manage profile, and view order history.',
+              'Track newly placed orders, download order invoices as PDFs, or even request to return products.',
+            ],
+          },
+          {
+            introduction: 'Staff-side:',
+            subpoints: [
+              'Access a dedicated dashboard to manage products, orders, customers, and inventory.',
+              'Oversee analytics, finances, and marketing content from centralized modules.',
+              'Handle support messages and update site-wide settings such as roles, branding, and policies.',
+            ],
+          },
+        ],
+      },
+    ],
+    techStack: [
+      { name: 'React', logo: '/tech/react.png' },
+      { name: 'Next.js', logo: '/tech/nextjs.png' },
+      { name: 'Node.js', logo: '/tech/nodejs.png' },
+      { name: 'Express.js', logo: '/tech/expressjs.png' },
+      { name: 'MongoDB', logo: '/tech/mongodb.png' },
+      { name: 'NextAuth.js', logo: '/tech/nextauthjs.png' },
+      { name: 'Tailwind', logo: '/tech/tailwind.png' },
+      { name: 'GSAP', logo: '/tech/gsap.png' },
+    ],
+    demoLink: 'https://poshax.shop/',
+  },
+  {
+    id: 1,
     mockupAllDevices: '/mockups/gameOn/allDevices.webp',
     mockups: [
       '/mockups/gameOn/iPhone12Pro.webp',
       '/mockups/gameOn/iPadPro.webp',
       '/mockups/gameOn/iMacPro.webp',
     ],
-    openGraphImage: 'https://www.dropbox.com/scl/fi/rskt7ad29o5oqicch02xw/gameon.png?rlkey=au7cmjd6b3ke5xdxhd3tx063x&raw=1',
+    openGraphImage: 'https://rahilbinmushfiq.vercel.app/_next/image?url=%2Fmockups%2FgameOn%2FallDevices.webp&w=1920&q=75',
     title: 'Game On',
     summary: 'A responsive and interactive game review web app that allows users to browse, search, and filter video games, as well as to read and submit reviews.',
     informativeSections: [
@@ -61,14 +127,60 @@ export const projects = [
     codeLink: 'https://github.com/rahilbinmushfiq/gameon',
   },
   {
-    id: 1,
+    id: 2,
+    mockupAllDevices: '/mockups/youthlink/allDevices.webp',
+    mockups: [
+      '/mockups/youthlink/iPhone12Pro.webp',
+      '/mockups/youthlink/iPadPro.webp',
+      '/mockups/youthlink/iMacPro.webp',
+    ],
+    openGraphImage:
+'https://rahilbinmushfiq.vercel.app/_next/image?url=%2Fmockups%2Fyouthlink%2FallDevices.webp&w=1920&q=75',
+    title: 'YouthLink Portfolio',
+    summary:
+      'A modern portfolio website for YouthLink Tech., showcasing its projects, services, and company background through a clean, animation-rich experience.',
+    informativeSections: [
+      {
+        heading: 'Features',
+        points: [
+          'Multi-page responsive website with modern UI design',
+          'Dynamic content transitions using GSAP for smooth animations',
+          'Interactive sections including sliders and Lottie animations',
+          'Contact form integration with EmailJS for direct client communication',
+          'Built with Next.js for performance, routing, and SEO optimization',
+          'Reusable components and modular structure for easy scalability',
+        ],
+      },
+      {
+        heading: 'Usage',
+        description:
+          'The YouthLink Portfolio website is designed to represent the company’s identity and expertise through multiple interactive pages:',
+        points: [
+          'Homepage: Features a slideshow highlighting the company vision and technical strengths.',
+          'Work page: Showcases completed and ongoing projects with detailed previews.',
+          'About page: Describes the team’s mission, values, and background.',
+          'Services page: Lists available services, such as web development, design, and consultation.',
+          'Contact page: Includes a contact form integrated with EmailJS and detailed company contact information.',
+        ],
+      },
+    ],
+    techStack: [
+      { name: 'React', logo: '/tech/react.png' },
+      { name: 'Next.js', logo: '/tech/nextjs.png' },
+      { name: 'Tailwind', logo: '/tech/tailwind.png' },
+      { name: 'GSAP', logo: '/tech/gsap.png' },
+    ],
+    demoLink: 'https://www.youthlink.tech/',
+  },
+  {
+    id: 3,
     mockupAllDevices: '/mockups/portfolio/allDevices.webp',
     mockups: [
       '/mockups/portfolio/iPhone12Pro.webp',
       '/mockups/portfolio/iPadPro.webp',
       '/mockups/portfolio/iMacPro.webp',
     ],
-    openGraphImage: 'https://www.dropbox.com/scl/fi/5emmjflw1saehvsjqiimj/portfolio.png?rlkey=pmopp1dt3w7rfld2qp9utfyqx&raw=1',
+    openGraphImage: 'https://rahilbinmushfiq.vercel.app/_next/image?url=%2Fmockups%2Fportfolio%2FallDevices.webp&w=1920&q=75',
     title: 'My Portfolio',
     summary: 'A responsive portfolio web app where viewers can view my personal projects, as well as learn about me and my skills as a frontend developer.',
     informativeSections: [
