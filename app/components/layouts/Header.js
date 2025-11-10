@@ -241,7 +241,7 @@ export default function Header() {
           {/* External Link for Resume */}
           <Link
             className="flex items-center gap-x-1.5 px-5 py-2.5 rounded-sm text-white border border-primary-light bg-primary-light transition-colors duration-500 ease-out hover:text-primary-light hover:bg-transparent"
-            href="/resume_rahilbinmushfiq.pdf"
+            href="https://docs.google.com/document/d/1nCZldsmV5JrF_jXrnADkXBA9xHMP88TSv8ox-dNVsXc/edit?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -273,7 +273,7 @@ export default function Header() {
               {/* External Link for Resume */}
               <Link
                 className="flex justify-center items-center gap-x-2 w-fit px-6 py-3 rounded-sm border border-white sm:px-8 sm:py-4"
-                href="/resume_rahilbinmushfiq.pdf"
+                href="https://docs.google.com/document/d/1nCZldsmV5JrF_jXrnADkXBA9xHMP88TSv8ox-dNVsXc/edit?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
               >
