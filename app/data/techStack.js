@@ -1,13 +1,8 @@
 export const techStack = [
   {
-    techName: 'HTML',
-    techWebsite: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
-    techLogo: '/tech/html.png',
-  },
-  {
-    techName: 'CSS',
-    techWebsite: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
-    techLogo: '/tech/css.png',
+    techName: 'HTML/CSS',
+    techWebsite: 'https://www.geeksforgeeks.org/html/html-css/',
+    techLogo: '/tech/htmlcss.png',
   },
   {
     techName: 'JavaScript',
@@ -23,6 +18,21 @@ export const techStack = [
     techName: 'Next.js',
     techWebsite: 'https://nextjs.org/',
     techLogo: '/tech/nextjs.png',
+  },
+  {
+    techName: 'Node.js',
+    techWebsite: 'https://nodejs.org/en',
+    techLogo: '/tech/nodejs.png',
+  },
+  {
+    techName: 'Express.js',
+    techWebsite: 'https://expressjs.com/',
+    techLogo: '/tech/expressjs.png',
+  },
+  {
+    techName: 'MongoDB',
+    techWebsite: 'https://www.mongodb.com/',
+    techLogo: '/tech/mongodb.png',
   },
   {
     techName: 'Firebase',
