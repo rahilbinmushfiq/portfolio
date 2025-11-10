@@ -99,7 +99,7 @@ export default function Hero() {
               Hi, I&apos;m <span className="text-primary-base">Rahil Bin Mushfiq</span>.
             </h2>
             <h1 className="font-semibold text-5xl/[1.15] xs:text-[3.5rem]/[1.15] lg:text-7xl/[1.15] xl:text-6xl/[1.15] 2xl:text-[5.5rem]/[1.15] 3xl:text-8xl/[1.2] dpr-lg:text-6xl/[1.15] dpr-xl:text-[3.5rem]/[1.15]">
-              Frontend Developer.
+              Web Developer.
             </h1>
             <p className="text-gray-600">
               I create unique and intuitive web experiences with a focus on clean code and user-centered design.

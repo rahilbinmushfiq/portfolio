@@ -1,6 +1,6 @@
 # Portfolio
 
-A responsive portfolio web app where viewers can view my personal projects, as well as learn about me and my skills as a frontend developer. This project is built using React, Next.js, Tailwind CSS, and GSAP.
+A responsive portfolio web app where viewers can view my personal projects, as well as learn about me and my skills as a web developer. This project is built using React, Next.js, Tailwind CSS, and GSAP.
 
 ![Portfolio Demo Walkthrough](https://www.dropbox.com/scl/fi/g0vp6xdzv0wns4yhdpzbl/portfolio_demo_walkthrough_rahilbinmushfiq.gif?rlkey=xc06424kw60gchgwamqw5u64x&raw=1)
 
@@ -69,7 +69,7 @@ This web app is built for the users to browse through my portfolio and reach out
 - Homepage: Displays an overview of the portfolio and provides easy navigation to different sections.
   - Hero section: Provides a brief introduction and captures viewers' attention.
   - Skills section: Highlights my technical skills, such as programming languages, frameworks, and tools I am proficient in.
-  - About section: Shares more information about my background, interests, and passion for frontend development.
+  - About section: Shares more information about my background, interests, and passion for web development.
   - Portfolio section: Showcases my personal projects, including their mockup images and brief descriptions. Each project has three call-to-action buttons linking to its respective project-details page, live demo, and GitHub repository.
   - Contact section: Provides my contact information and a contact form for viewers to get in touch with me.
 - Project-details page: A dynamic page that displays the details of a project based on the URL parameter. Each project has its own unique page, accessible through the project list on the Portfolio section of homepage. It includes:
@@ -84,7 +84,7 @@ Although the app is functioning properly, I plan to make further improvements in
 
 - Include a demo walkthrough video on the project details page to provide a better understanding of each project.
 - Continuously improve the UI/UX based on user feedback to enhance the overall user experience and visual appeal.
-- Add a blog section to share my thoughts and insights on the frontend development topics and trends.
+- Add a blog section to share my thoughts and insights on the web development topics and trends.
 
 ## Contact
 

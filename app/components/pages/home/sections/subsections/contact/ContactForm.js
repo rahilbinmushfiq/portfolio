@@ -53,7 +53,7 @@ export default function ContactForm() {
         {/* Section Header */}
         <div ref={headerRef} className="section-header">
           <h3><span />Contact</h3>
-          <p>Seeking a dedicated frontend developer? Feel free to send me a message to discuss how I can contribute to your success.</p>
+          <p>Seeking a dedicated web developer? Feel free to send me a message to discuss how I can contribute to your success.</p>
         </div>
         {/* Contact Form */}
         <Form formRef={formRef} />

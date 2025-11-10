@@ -182,7 +182,7 @@ export const projects = [
     ],
     openGraphImage: 'https://rahilbinmushfiq.vercel.app/_next/image?url=%2Fmockups%2Fportfolio%2FallDevices.webp&w=1920&q=75',
     title: 'My Portfolio',
-    summary: 'A responsive portfolio web app where viewers can view my personal projects, as well as learn about me and my skills as a frontend developer.',
+    summary: 'A responsive portfolio web app where viewers can view my personal projects, as well as learn about me and my skills as a web developer.',
     informativeSections: [
       {
         heading: 'Features',
@@ -202,7 +202,7 @@ export const projects = [
             subpoints: [
               'Hero section: Provides a brief introduction and captures viewers\' attention.',
               'Skills section: Highlights my technical skills, such as programming languages, frameworks, and tools I am proficient in.',
-              'About section: Shares more information about my background, interests, and passion for frontend development.',
+              'About section: Shares more information about my background, interests, and passion for web development.',
               'Portfolio section: Showcases my personal projects, including their mockup images and brief descriptions. Each project has three call-to-action buttons linking to its respective project-details page, live demo, and GitHub repository.',
               'Contact section: Provides my contact information and a contact form for viewers to get in touch with me.',
             ],
@@ -224,7 +224,7 @@ export const projects = [
         points: [
           'Include a demo walkthrough video on the project details page to provide a better understanding of each project.',
           'Continuously improve the UI/UX based on user feedback to enhance the overall user experience and visual appeal.',
-          'Add a blog section to share my thoughts and insights on the frontend development topics and trends.',
+          'Add a blog section to share my thoughts and insights on the web development topics and trends.',
         ],
       },
     ],

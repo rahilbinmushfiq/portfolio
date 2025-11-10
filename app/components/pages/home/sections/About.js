@@ -64,7 +64,7 @@ export default function About() {
         {/* Section Header */}
         <div ref={headerRef} className="section-header">
           <h3><span />About</h3>
-          <p>In this section, you can take a quick look at my life as a frontend developer.</p>
+          <p>In this section, you can take a quick look at my life as a web developer.</p>
         </div>
         {/* Mobile Section Image */}
         <Image
