@@ -77,7 +77,7 @@ export default function About() {
           {/* Personal Subsection */}
           <div>
             <h4>Personal</h4>
-            <p>When I&apos;m not coding, you can find me playing video games, watching football, reading about the latest trends in web development, or exploring new technologies.</p>
+            <p>When I&apos;m not coding, I&apos;m usually playing games, watching football, reading about new web trends, or exploring different technologies.</p>
           </div>
           {/* Technical Subsection */}
           <div>
@@ -87,7 +87,16 @@ export default function About() {
           {/* Education Subsection */}
           <div>
             <h4>Education</h4>
-            <p>I earned my Bachelor&apos;s degree in Computer Science and Engineering from Brac University, graduating with a CGPA of 3.63 out of 4.00.</p>
+            <p>I completed my Bachelor&apos;s in Computer Science and Engineering at Brac University with a CGPA of 3.63 out of 4.00. Also, our thesis resulted in an{" "}
+              <a
+                href="https://ieeexplore.ieee.org/document/10477346"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold underline decoration-[1.5px] underline-offset-2 text-primary-base"
+              >
+                IEEE journal publication
+              </a>.
+            </p>
           </div>
         </div>
       </div>
