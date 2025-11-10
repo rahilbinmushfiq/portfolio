@@ -30,8 +30,8 @@ export default function ContactForm() {
         delay: 0.5,
         scrollTrigger: {
           trigger: isMobileScreenTooSmall ? '#home' : subsectionElement,
-          start: `top-=${headerOffsetHeight} bottom`,
-          end: `bottom-=${headerOffsetHeight} top`,
+          start: `top-=${headerOffsetHeight} bottom-=100`,
+          end: `bottom-=${headerOffsetHeight} top+=100`,
           toggleActions: 'restart reset restart reset',
         },
         defaults: { autoAlpha: 0, duration: 0.5, ease: 'power1.out' },
