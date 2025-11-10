@@ -21,7 +21,7 @@ export default function Project({ projectData: { id, mockupAllDevices, title, su
   };
 
   return (
-    <div className="flex flex-col justify-center items-center gap-y-6 min-w-full px-10 sm:gap-y-10 sm:px-36 md:px-[10rem] lg:gap-y-14 lg:px-[11rem] xl:flex-row xl:gap-y-0 xl:gap-x-14 xl:px-36 2xl:gap-x-24 2xl:px-56 3xl:gap-x-32 3xl:px-[28rem] dpr-lg:gap-x-14 dpr-xl:gap-x-8">
+    <div className="flex flex-col justify-center items-center gap-y-6 w-full shrink-0 px-10 sm:gap-y-10 sm:px-36 md:px-[10rem] lg:gap-y-14 lg:px-[11rem] xl:flex-row xl:gap-y-0 xl:gap-x-14 xl:px-36 2xl:gap-x-24 2xl:px-56 3xl:gap-x-32 3xl:px-[28rem] dpr-lg:gap-x-14 dpr-xl:gap-x-8">
       {/* Project Image */}
       <div className="relative pointer-events-none select-none w-full h-[30vh] xs:h-1/3 sm:h-2/5 xl:h-2/3 xl:basis-5/6 2xl:basis-4/5 2xl:h-2/3">
         <Image
@@ -33,7 +33,7 @@ export default function Project({ projectData: { id, mockupAllDevices, title, su
         />
       </div>
       {/* Project Overview */}
-      <div className="landscape:my-auto">
+      <div className="w-full landscape:my-auto">
         {/* Description Segment */}
         <div className="select-none pb-6 lg:pb-11 xl:pt-0">
           <h5 className="w-fit mb-1 p-2 text-xs font-medium rounded-sm text-primary-dark bg-primary-lightest sm:mb-2 2xl:text-sm 3xl:text-base dpr-lg:text-xs">

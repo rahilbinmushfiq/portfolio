@@ -79,7 +79,7 @@ export default function Carousel({ carouselRef, chevronLeftRef, projectRef, chev
       {/* Projects */}
       <div
         ref={projectRef}
-        className="flex cursor-grab transition-transform ease-in-out duration-500"
+        className="w-full flex cursor-grab transition-transform ease-in-out duration-500"
         style={{ transform: `translateX(calc(-${activeProjectId * 100}%))` }}
       >
         {projects.map(project => (
