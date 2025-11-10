@@ -68,7 +68,7 @@ export default function ContactInformation() {
         <div ref={contactInformationsRef} className="space-y-8 [&>div]:alt-contact-option sm:space-y-9 dpr-xl:space-y-6">
           <div>
             <AiFillPhone />
-            <Link href="tel:+8801777-578493">+880 1777-578493</Link>
+            <Link href="tel:+46767536634">+46 767536634</Link>
           </div>
           <div>
             <MdEmail />
