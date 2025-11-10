@@ -52,7 +52,7 @@ export default function Project({ projectData: { id, mockupAllDevices, title, su
         </div>
         {/* Button Segment */}
         <div className="project-btn">
-          <button className="col-span-2 text-white bg-primary-base hover:bg-primary-light lg:col-span-1">
+          <button className={`text-white bg-primary-base hover:bg-primary-light lg:col-span-1 ${!codeLink ? "col-span-1" : "col-span-2"}`}>
             <Link href={`/project/${id}`} onClick={handlePageTransition}>
               <p>Learn More</p>
             </Link>
@@ -63,13 +63,15 @@ export default function Project({ projectData: { id, mockupAllDevices, title, su
               <p>Live Demo</p>
             </Link>
           </button>
-          <button className="text-primary-base hover:text-white hover:bg-primary-light">
+          {!!codeLink && <button className="text-primary-base hover:text-white hover:bg-primary-light">
             <Link href={codeLink} target="_blank" rel="noopener noreferrer">
               <TbCode className="hidden xs:block landscape:block" />
               <p>Source Code</p>
             </Link>
-          </button>
+          </button>}
         </div>
+        {/* NDA Segment */}
+        {!codeLink && <p className="mt-3 text-neutral-500 text-[13px]">*Source code not available due to NDA</p>}
       </div>
     </div>
   );

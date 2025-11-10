@@ -19,8 +19,9 @@ export default function Section({ project }) {
     // Get the elements needed for animation from their references
     const articleElement = articleRef.current,
       coverElement = coverRef.current,
-      headerElements = heroSectionRef.current.firstChild.children,
-      buttonElements = heroSectionRef.current.lastChild.children,
+      headerElements = heroSectionRef.current.children[0].children,
+      buttonElements = heroSectionRef.current.children[1].children,
+      ndaElement = heroSectionRef.current.children[2],
       techHeadingElement = techStackSectionRef.current.firstChild,
       techElements = techStackSectionRef.current.lastChild.children,
       informativeSectionElements = [...informativeSectionsRef.current];
@@ -36,6 +37,7 @@ export default function Section({ project }) {
         .from(coverElement, { yPercent: -50, duration: 0.5 }, '<')
         .from(headerElements, { y: 25, stagger: { amount: 0.25 } })
         .from(buttonElements, { x: 50, stagger: 0.125 }, '<0.15')
+        .from(ndaElement, { y: 25 }, '<0.15')
         .from(techHeadingElement, { y: 25, duration: 0.25 }, '<')
         .from(techElements, { x: 50, stagger: 0.125 }, '<0.15');
 

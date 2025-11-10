@@ -53,15 +53,17 @@ export default function Portfolio() {
         .from(headingUnderlineElement, { transformOrigin: 'center left', scaleX: 0 }, '<0.35');;
 
       projects.forEach(project => {
-        // Get the elements (image, details, and buttons) of the project
+        // Get the elements (image, details, buttons, and NDA) of the project
         const projectImageElement = project.firstChild,
-          projectDetailElements = project.lastChild.firstChild.children,
-          projectButtonElements = project.lastChild.lastChild.children;
+          projectDetailElements = project.lastChild.children[0].children,
+          projectButtonElements = project.lastChild.children[1].children,
+          projectNDATextElement = project.lastChild.children[2];
 
         // Animate the elements of the projects
         tl.from(projectImageElement, { x: -50 }, '<-0.35')
           .from(projectDetailElements, { x: 25, stagger: { amount: 0.4 } }, '<')
           .from(projectButtonElements, { x: 35, duration: 0.4, stagger: { amount: 0.4 } }, '<0.1')
+          .from(projectNDATextElement, { x: 25 }, '<0.3')
       });
     });
 
