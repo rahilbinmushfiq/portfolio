@@ -2,7 +2,7 @@
 
 A responsive portfolio web app where viewers can view my personal projects, as well as learn about me and my skills as a web developer. This project is built using React, Next.js, Tailwind CSS, and GSAP.
 
-![Portfolio Demo Walkthrough](https://www.dropbox.com/scl/fi/g0vp6xdzv0wns4yhdpzbl/portfolio_demo_walkthrough_rahilbinmushfiq.gif?rlkey=xc06424kw60gchgwamqw5u64x&raw=1)
+![Portfolio Demo Walkthrough](https://res.cloudinary.com/deef39sq2/image/upload/v1772998504/rahil-main-portfolio-video-walkthrough_h2brrw.gif)
 
 ## Table of Contents
 
@@ -84,4 +84,5 @@ Although the app is functioning properly, I plan to make further improvements in
 - Include a demo walkthrough video on the project details page to provide a better understanding of each project.
 - Continuously improve the UI/UX based on user feedback to enhance the overall user experience and visual appeal.
 - Add a blog section to share my thoughts and insights on the web development topics and trends.
+
 
