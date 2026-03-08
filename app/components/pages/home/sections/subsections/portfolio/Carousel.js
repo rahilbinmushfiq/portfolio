@@ -68,7 +68,7 @@ export default function Carousel({ carouselRef, chevronLeftRef, projectRef, chev
   };
 
   return (
-    <div ref={carouselRef} className="invisible relative grow flex justify-center pt-8 pb-12 overflow-hidden shadow-[0_-6px_36px_0_rgba(0,0,0,0.2)] bg-neutral-100 xs:py-0 landscape:py-0">
+    <div ref={carouselRef} className="invisible relative grow flex justify-center pt-8 pb-12 overflow-hidden bg-neutral-50 xs:py-0 landscape:py-0">
       {/* Left Chevron */}
       <div ref={chevronLeftRef} className="portfolio-chevron-wrapper left-0">
         <FaChevronLeft
